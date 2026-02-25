@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "小八子"
             }
+          },
+          {
+            "id": "2c061beaefebfed9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "牛皮.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "牛皮"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "小八子.md",
+                "file": "牛皮.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "小八子 的反向链接列表"
+              "title": "牛皮 的反向链接列表"
             }
           },
           {
@@ -113,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "小八子.md",
+                "file": "牛皮.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "小八子 的出链列表"
+              "title": "牛皮 的出链列表"
             }
           },
           {
@@ -156,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "小八子.md",
+                "file": "牛皮.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "小八子 的大纲"
+              "title": "牛皮 的大纲"
             }
           }
         ]
@@ -183,8 +198,9 @@
       "bases:新建数据库": false
     }
   },
-  "active": "dde3a18435b4d0ff",
+  "active": "2c061beaefebfed9",
   "lastOpenFiles": [
-    "小八子.md"
+    "小八子.md",
+    "牛皮.md"
   ]
 }
