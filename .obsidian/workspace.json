@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "牛皮.md",
+                "file": "小八子.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "牛皮"
+              "title": "小八子"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "牛皮.md",
+                "file": "小八子.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "牛皮 的反向链接列表"
+              "title": "小八子 的反向链接列表"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "牛皮.md",
+                "file": "小八子.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "牛皮 的出链列表"
+              "title": "小八子 的出链列表"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "牛皮.md",
+                "file": "小八子.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "牛皮 的大纲"
+              "title": "小八子 的大纲"
             }
           }
         ]
@@ -198,9 +198,11 @@
       "bases:新建数据库": false
     }
   },
-  "active": "2c061beaefebfed9",
+  "active": "a77339f7316bd7b1",
   "lastOpenFiles": [
-    "小八子.md",
-    "牛皮.md"
+    "gitignore",
+    "新建文本文档.txt",
+    "牛皮.md",
+    "小八子.md"
   ]
 }
