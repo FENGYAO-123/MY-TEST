@@ -1,0 +1,15 @@
+<style>
+.creator-bio a {
+    color: #8b5cf6;
+    text-decoration: underline;
+}
+
+.creator-bio a:hover {
+    color: #a78bfa;
+    text-decoration: underline;
+}
+</style>
+
+<div class="creator-bio">
+    {{ .Inner | safeHTML }}
+</div>

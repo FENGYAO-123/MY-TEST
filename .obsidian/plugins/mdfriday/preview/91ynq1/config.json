@@ -1,0 +1,30 @@
+{
+  "baseURL": "/s/b1623f077c/91ynq1",
+  "title": "xiaoba",
+  "contentDir": "content",
+  "publishDir": "public",
+  "defaultContentLanguage": "en",
+  "taxonomies": {
+    "tag": "tags",
+    "category": "categories"
+  },
+  "module": {
+    "imports": [
+      {
+        "path": "https://sunwei.xyz/mdf/note.zip?version=1.2"
+      }
+    ]
+  },
+  "markdown": {
+    "useInternalRenderer": false
+  },
+  "params": {
+    "branding": false
+  },
+  "languages": {
+    "en": {
+      "contentDir": "content",
+      "weight": 1
+    }
+  }
+}

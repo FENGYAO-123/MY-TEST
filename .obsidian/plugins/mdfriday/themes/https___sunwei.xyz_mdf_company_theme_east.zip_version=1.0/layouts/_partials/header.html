@@ -1,0 +1,53 @@
+<header>
+    <div id="overlay">
+        <ul class="text-center list-none text-white text-3xl">
+            {{- if .Site.Home.Params.menu.nav -}}
+                {{- range .Site.Home.Params.menu.nav -}}
+                <li class="p-2">
+                    <a href="{{ .url | relLangURL }}">
+                        <span>{{ .title }}</span>
+                    </a>
+                </li>
+                {{- end -}}
+            {{- end -}}
+        </ul>
+    </div>
+    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
+        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+            <a href="{{ .Site.BaseURL }}">
+                {{- if .Site.Home.Params.organization.logo -}}
+                <img alt="{{ .Site.Home.Params.organization.name }}"
+                     class="h-14 mr-3"
+                     src="{{ .Site.Home.Params.organization.logo | relURL }}">
+                {{- end -}}
+            </a>
+        </div>
+        <div class="block lg:hidden">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+            <div class="text-lg">
+                {{- if .Site.Home.Params.menu.nav -}}
+                    {{- $currentPage := . -}}
+                    {{- range .Site.Home.Params.menu.nav -}}
+                    {{- $isHome := eq .url "" -}}
+                    {{- $isActive := or
+                        (and $isHome $currentPage.IsHome)
+                        (and (not $isHome) (in $currentPage.RelPermalink .url))
+                    -}}
+                    <a href="{{ .url | relLangURL }}"
+                        class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8{{ if $isActive }} font-bold{{ end }}">
+                        {{ .title }}
+                    </a>
+                    {{- end -}}
+                {{- end -}}
+            </div>
+        </div>
+    </nav>
+</header>

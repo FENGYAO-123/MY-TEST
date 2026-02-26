@@ -1,0 +1,161 @@
+{{/* Load JavaScript */}}
+<script src="{{ "js/darkmode.js" | relURL }}" defer></script>
+<script src="{{ "js/readermode.js" | relURL }}" defer></script>
+<script src="{{ "js/toc.js" | relURL }}" defer></script>
+<script src="{{ "js/explorer.js" | relURL }}" defer></script>
+<script src="{{ "js/clipboard.js" | relURL }}" defer></script>
+<script src="{{ "js/callout.js" | relURL }}" defer></script>
+
+{{/* FlexSearch for client-side search - using version 0.7.31 which has proper bundle file */}}
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.31/dist/flexsearch.bundle.js" defer></script>
+
+{{/* Search functionality - processed as template to inject search-data.json URL */}}
+{{- $searchJSFile := printf "%s.search.js" .Language.Lang }}
+{{- $searchJS := resources.Get "search.js" | resources.ExecuteAsTemplate $searchJSFile . | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ $searchJS.RelPermalink }}"></script>
+
+{{/* D3.js for Graph force simulation */}}
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+{{/* PixiJS for GPU-accelerated graph rendering (following Quartz implementation) */}}
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8.0.0/dist/pixi.min.js"></script>
+
+{{/* Graph visualization script */}}
+<script src="{{ "js/graph.js" | relURL }}" defer></script>
+
+{{/* Floating UI for Popover positioning */}}
+<script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.5.0/dist/floating-ui.core.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.5.3/dist/floating-ui.dom.umd.min.js"></script>
+
+{{/* Popover Preview */}}
+<script src="{{ "js/popover.js" | relURL }}" defer></script>
+
+{{/* Inject page data for Explorer */}}
+<script>
+{{/* Extract baseURL path to remove from display paths */}}
+{{- $baseURL := .Site.BaseURL | default "/" -}}
+{{- $baseURLPath := "" -}}
+{{- if ne $baseURL "/" -}}
+  {{/* Extract path part from baseURL: "/public/" -> "public" */}}
+  {{- $baseURLPath = $baseURL | strings.TrimPrefix "/" | strings.TrimSuffix "/" -}}
+{{- end -}}
+
+window.__FOUNDRY_PAGES__ = [
+    {{/* ⭐ Use .Site.Pages to include regular pages, section pages, and home page */}}
+    {{- $pages := .Site.Pages -}}
+    {{- range $index, $page := $pages -}}
+    {{- if $index -}},{{- end -}}
+    
+    {{/* Get relative permalink and normalize it */}}
+    {{- $relPermalink := $page.RelPermalink | strings.TrimPrefix "/" -}}
+    
+    {{/* Create full slug: remove baseURL prefix, .html suffix, /index suffix */}}
+    {{- $fullSlug := $relPermalink -}}
+    {{- if $baseURLPath -}}
+      {{- $fullSlug = $relPermalink | strings.TrimPrefix $baseURLPath | strings.TrimPrefix "/" -}}
+    {{- end -}}
+    {{- $fullSlug = $fullSlug | strings.TrimSuffix ".html" | strings.TrimSuffix "/index" -}}
+    {{- if eq $fullSlug "" -}}{{- $fullSlug = "index" -}}{{- end -}}
+    
+    {{/* Display path is same as fullSlug for root-level content */}}
+    {{- $displayPath := $fullSlug -}}
+    
+    {{/* Get page title using shared partial */}}
+    {{- $pageTitle := partial "quartz/title.html" $page -}}
+    
+    {
+        "slug": {{ $fullSlug | jsonify }},
+        "displayPath": {{ $displayPath | jsonify }},
+        "url": {{ $page.RelPermalink | jsonify }},
+        "title": {{ $pageTitle | jsonify }}
+    }
+    {{- end -}}
+];
+
+{{/* Inject Content Index for Graph */}}
+{{/* 
+Note: Link data will be populated by HtmlLinkProcessor during rendering.
+Here we provide the structure, actual links are added via Page.GetOutgoingLinks()
+which is populated after WikilinkContent processing.
+
+For now, we'll use a simplified approach and let the graph render based on
+explicit wikilinks in the content. A future enhancement would be to expose
+the PageGraph data directly to templates.
+*/}}
+window.__FOUNDRY_CONTENT_INDEX__ = {
+    {{/* ⭐ Use .Site.Pages to include regular pages, section pages, and home page */}}
+    {{- $pages := .Site.Pages -}}
+    {{- range $index, $page := $pages -}}
+    {{- if $index -}},{{- end -}}
+    
+    {{/* Extract slug (same logic as above) */}}
+    {{- $relPermalink := $page.RelPermalink | strings.TrimPrefix "/" -}}
+    {{- $fullSlug := $relPermalink -}}
+    {{- if $baseURLPath -}}
+      {{- $fullSlug = $relPermalink | strings.TrimPrefix $baseURLPath | strings.TrimPrefix "/" -}}
+    {{- end -}}
+    {{- $fullSlug = $fullSlug | strings.TrimSuffix ".html" | strings.TrimSuffix "/index" -}}
+    {{- if eq $fullSlug "" -}}{{- $fullSlug = "index" -}}{{- end -}}
+    
+    {{/* Get outgoing links from Page entity (populated by HtmlLinkProcessor) */}}
+    {{- $links := slice -}}
+    {{- with $page.OutgoingLinks -}}
+      {{- $links = . -}}
+    {{- end -}}
+    
+    {{/* Safely handle tags - use GetPage to get correct slug (same as article nodes) */}}
+    {{- $tags := slice -}}
+    {{- with $page.Params.tags -}}
+      {{- if reflect.IsSlice . -}}
+        {{/* Array of tags */}}
+        {{- range . -}}
+          {{/* Don't use urlize - it removes / from hierarchical tags! */}}
+          {{- with $.Site.GetPage (printf "tags/%s" .) -}}
+            {{/* Extract slug from tag page's RelPermalink (like article nodes) */}}
+            {{- $tagRelPermalink := .RelPermalink | strings.TrimPrefix "/" -}}
+            {{- $tagFullSlug := $tagRelPermalink -}}
+            {{- if $baseURLPath -}}
+              {{- $tagFullSlug = $tagRelPermalink | strings.TrimPrefix $baseURLPath | strings.TrimPrefix "/" -}}
+            {{- end -}}
+            {{- $tagFullSlug = $tagFullSlug | strings.TrimSuffix ".html" | strings.TrimSuffix "/index" -}}
+            {{- $tags = $tags | append $tagFullSlug -}}
+          {{- end -}}
+        {{- end -}}
+      {{- else -}}
+        {{/* Single tag value */}}
+        {{/* Don't use urlize - it removes / from hierarchical tags! */}}
+        {{- with $.Site.GetPage (printf "tags/%s" .) -}}
+          {{- $tagRelPermalink := .RelPermalink | strings.TrimPrefix "/" -}}
+          {{- $tagFullSlug := $tagRelPermalink -}}
+          {{- if $baseURLPath -}}
+            {{- $tagFullSlug = $tagRelPermalink | strings.TrimPrefix $baseURLPath | strings.TrimPrefix "/" -}}
+          {{- end -}}
+          {{- $tagFullSlug = $tagFullSlug | strings.TrimSuffix ".html" | strings.TrimSuffix "/index" -}}
+          {{- $tags = $tags | append $tagFullSlug -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    
+    {{/* Get page title using shared partial */}}
+    {{- $pageTitle := partial "quartz/title.html" $page -}}
+    
+    {{ $fullSlug | jsonify }}: {
+        "slug": {{ $fullSlug | jsonify }},
+        "title": {{ $pageTitle | jsonify }},
+        "links": {{ $links | jsonify }},
+        "tags": {{ $tags | jsonify }}
+    }
+    {{- end -}}
+};
+
+{{/* Expose baseURLPath for client-side use */}}
+window.__FOUNDRY_BASE_URL_PATH__ = {{ $baseURLPath | jsonify }};
+
+{{/* Debug: Log page data generation */}}
+console.log('[Explorer] Loaded pages:', window.__FOUNDRY_PAGES__.length);
+console.log('[Explorer] Base URL path:', {{ $baseURLPath | jsonify }});
+console.log('[Graph] Loaded content index:', Object.keys(window.__FOUNDRY_CONTENT_INDEX__).length);
+console.log('[Graph] Injected __FOUNDRY_BASE_URL_PATH__:', window.__FOUNDRY_BASE_URL_PATH__);
+</script>
+
+

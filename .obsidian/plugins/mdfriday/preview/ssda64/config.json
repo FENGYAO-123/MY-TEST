@@ -1,0 +1,30 @@
+{
+  "baseURL": "/",
+  "title": "Obsidian仓库和GitHub同步",
+  "contentDir": "content",
+  "publishDir": "public",
+  "defaultContentLanguage": "en",
+  "taxonomies": {
+    "tag": "tags",
+    "category": "categories"
+  },
+  "module": {
+    "imports": [
+      {
+        "path": "https://gohugo.net/note.zip?version=1.2"
+      }
+    ]
+  },
+  "markdown": {
+    "useInternalRenderer": false
+  },
+  "params": {
+    "branding": true
+  },
+  "languages": {
+    "zh": {
+      "contentDir": "content",
+      "weight": 1
+    }
+  }
+}

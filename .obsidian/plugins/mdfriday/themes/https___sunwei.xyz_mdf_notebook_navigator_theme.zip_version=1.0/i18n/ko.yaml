@@ -1,0 +1,90 @@
+# Navigation
+- id: nav_home
+  translation: 홈
+
+- id: nav_documentation
+  translation: 문서
+
+- id: nav_support
+  translation: 지원
+
+# 목차
+- id: toc_title
+  translation: 목차
+
+# 릴리스
+- id: view_full_changelog
+  translation: 전체 변경 로그 보기
+
+# 푸터
+- id: footer_theme_credit
+  translation: '테마 <a href="https://theme-ob-plugin.mdfriday.com">Obsidian Plugin</a>은 <a href="https://notebooknavigator.com/">Notebook Navigator</a>에서 개편'
+
+- id: nav_star_github
+  translation: GitHub에서 스타
+
+- id: nav_toggle_theme
+  translation: 테마 전환
+
+- id: nav_toggle_navigation
+  translation: 네비게이션 전환
+
+- id: nav_change_language
+  translation: 언어 변경
+
+# Footer 항목은 현재 frontmatter에서 설정 가능
+# 필요한 UI 요소만 i18n에 유지
+
+# Installation
+- id: install_from_obsidian
+  translation: Obsidian에서 설치
+
+- id: install_step_1
+  translation: 설정 → 커뮤니티 플러그인 열기
+
+- id: install_step_2
+  translation: 검색
+
+- id: install_step_3
+  translation: 설치 클릭 후 활성화
+
+# Buttons and Actions
+- id: btn_install_obsidian
+  translation: Obsidian에서 설치
+
+- id: btn_view_documentation
+  translation: 문서 보기
+
+- id: btn_get_support
+  translation: 지원 받기
+
+- id: btn_buy_me_coffee
+  translation: 커피 사주기
+
+- id: btn_sponsor_github
+  translation: GitHub에서 후원
+
+- id: btn_download_manual
+  translation: 수동 설치 다운로드
+
+- id: btn_view_releases
+  translation: 모든 릴리스 보기
+
+# Stats and Labels
+- id: label_free
+  translation: 무료
+
+- id: label_open_source
+  translation: 오픈 소스
+
+- id: label_downloads
+  translation: 다운로드
+
+- id: label_github_stars
+  translation: GitHub 스타
+
+- id: label_latest_updates
+  translation: 최신 업데이트
+
+- id: label_latest_release
+  translation: 최신 릴리스

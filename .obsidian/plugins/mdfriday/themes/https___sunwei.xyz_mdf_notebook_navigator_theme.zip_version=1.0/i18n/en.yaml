@@ -1,0 +1,157 @@
+# Navigation
+- id: nav_home
+  translation: Home
+
+- id: nav_documentation
+  translation: Documentation
+
+- id: nav_support
+  translation: Support
+
+# Table of Contents
+- id: toc_title
+  translation: TABLE OF CONTENTS
+
+# Releases
+- id: view_full_changelog
+  translation: View full changelog
+
+# Footer
+- id: footer_theme_credit
+  translation: 'Theme <a href="https://theme-ob-plugin.mdfriday.com">Obsidian Plugin</a> adapted from <a href="https://notebooknavigator.com/">Notebook Navigator</a>'
+
+- id: nav_star_github
+  translation: Star on GitHub
+
+- id: nav_toggle_theme
+  translation: Toggle theme
+
+- id: nav_toggle_navigation
+  translation: Toggle navigation
+
+- id: nav_change_language
+  translation: Change language
+
+# Footer items are now configurable in frontmatter
+# Only keep essential UI elements for i18n
+
+# Installation
+- id: install_from_obsidian
+  translation: Install from Obsidian
+
+- id: install_step_1
+  translation: Open Settings → Community plugins
+
+- id: install_step_2
+  translation: Search for
+
+- id: install_step_3
+  translation: Click Install, then Enable
+
+# Buttons and Actions
+- id: btn_install_obsidian
+  translation: Install in Obsidian
+
+- id: btn_view_documentation
+  translation: View documentation
+
+- id: btn_get_support
+  translation: Get support
+
+- id: btn_buy_me_coffee
+  translation: Buy me a coffee
+
+- id: btn_sponsor_github
+  translation: Sponsor on GitHub
+
+- id: btn_download_manual
+  translation: Download manual install
+
+- id: btn_view_releases
+  translation: View all releases
+
+# Stats and Labels
+- id: label_free
+  translation: Free
+
+- id: label_open_source
+  translation: Open source
+
+- id: label_downloads
+  translation: Downloads
+
+- id: label_github_stars
+  translation: GitHub stars
+
+- id: label_latest_updates
+  translation: Latest Updates
+
+- id: label_latest_release
+  translation: Latest release
+
+# Common Terms
+- id: loading
+  translation: Loading...
+
+- id: error
+  translation: Error
+
+- id: success
+  translation: Success
+
+- id: close
+  translation: Close
+
+- id: open
+  translation: Open
+
+- id: cancel
+  translation: Cancel
+
+- id: confirm
+  translation: Confirm
+
+- id: save
+  translation: Save
+
+- id: edit
+  translation: Edit
+
+- id: delete
+  translation: Delete
+
+- id: search
+  translation: Search
+
+- id: filter
+  translation: Filter
+
+- id: sort
+  translation: Sort
+
+- id: view
+  translation: View
+
+- id: download
+  translation: Download
+
+- id: upload
+  translation: Upload
+
+- id: share
+  translation: Share
+
+- id: copy
+  translation: Copy
+
+- id: paste
+  translation: Paste
+
+- id: cut
+  translation: Cut
+
+- id: undo
+  translation: Undo
+
+- id: redo
+  translation: Redo

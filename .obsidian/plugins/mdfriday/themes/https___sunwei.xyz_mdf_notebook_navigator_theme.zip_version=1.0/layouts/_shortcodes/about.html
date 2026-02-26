@@ -1,0 +1,25 @@
+{{ $label := .Get "label" }}
+{{ $title := .Get "title" }}
+{{ $name := .Get "name" }}
+{{ $subtitle := .Get "subtitle" }}
+
+<!-- About the Creator -->
+<section id="about" class="about-creator">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">{{ $label }}</span>
+            <h2 class="section-title">{{ $title }}</h2>
+        </div>
+        
+        <div class="creator-content">
+            <div class="creator-card">
+                <div class="creator-info">
+                    <h3>{{ $name }}</h3>
+                    <p class="creator-title">{{ $subtitle }}</p>
+                    
+                    {{ .Inner | safeHTML }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,72 @@
+{{ $label := .Get "label" }}
+{{ $pluginName := .Get "plugin" }}
+{{ $fallbackValue := .Get "fallback" | default "50k" }}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const heroStats = document.getElementById('hero-stats');
+    if (heroStats) {
+        // Add divider if not first stat
+        if (heroStats.children.length > 0) {
+            const divider = document.createElement('div');
+            divider.className = 'stat-divider';
+            heroStats.appendChild(divider);
+        }
+        
+        const stat = document.createElement('div');
+        stat.className = 'stat';
+        
+        const value = document.createElement('span');
+        value.className = 'stat-value';
+        value.id = 'obsidian-downloads';
+        value.textContent = '{{ $fallbackValue }}'; // Initial fallback value
+        
+        const label = document.createElement('span');
+        label.className = 'stat-label';
+        label.textContent = '{{ $label }}';
+        
+        stat.appendChild(value);
+        stat.appendChild(label);
+        heroStats.appendChild(stat);
+        
+        // Fetch Obsidian download stats (based on source implementation)
+        fetchObsidianDownloads();
+    }
+});
+
+async function fetchObsidianDownloads() {
+    try {
+        const response = await fetch('https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/community-plugin-stats.json');
+        const data = await response.json();
+        const downloads = data['{{ $pluginName }}']?.downloads;
+        
+        if (downloads) {
+            const formattedDownloads = formatNumber(downloads);
+            const downloadElement = document.getElementById('obsidian-downloads');
+            if (downloadElement) {
+                downloadElement.textContent = formattedDownloads;
+            }
+            
+            // Also update any other elements with these IDs (for compatibility)
+            const otherElements = document.querySelectorAll('#download-count, #badge-downloads');
+            otherElements.forEach(el => {
+                if (el) el.textContent = formattedDownloads;
+            });
+            
+            console.log('Obsidian downloads loaded successfully:', downloads);
+        }
+    } catch (error) {
+        console.log('Failed to load Obsidian downloads:', error);
+        // Keep fallback value
+    }
+}
+
+function formatNumber(num) {
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(num >= 10000 ? 0 : 1) + 'k';
+    }
+    return num.toString();
+}
+</script>

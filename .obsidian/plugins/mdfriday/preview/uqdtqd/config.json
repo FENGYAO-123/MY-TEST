@@ -1,0 +1,34 @@
+{
+  "baseURL": "/s/b1623f077c/v6uraq",
+  "title": "notebook-navigator",
+  "contentDir": "content",
+  "publishDir": "public",
+  "defaultContentLanguage": "en",
+  "taxonomies": {
+    "tag": "tags",
+    "category": "categories"
+  },
+  "module": {
+    "imports": [
+      {
+        "path": "https://sunwei.xyz/mdf/notebook_navigator_theme.zip?version=1.0"
+      }
+    ]
+  },
+  "markdown": {
+    "useInternalRenderer": true
+  },
+  "params": {
+    "branding": false
+  },
+  "languages": {
+    "en": {
+      "contentDir": "content",
+      "weight": 1
+    },
+    "zh": {
+      "contentDir": "content.zh",
+      "weight": 2
+    }
+  }
+}

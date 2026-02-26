@@ -1,0 +1,1 @@
+E:/01_MY HOME/MY-TEST/Obsidian仓库和GitHub同步.md

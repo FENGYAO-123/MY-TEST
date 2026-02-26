@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "小八子.md",
+                "file": "MDFriday/NUPUGOO/content/contact.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "小八子"
-            }
-          },
-          {
-            "id": "2c061beaefebfed9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "小八子.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "小八子"
+              "title": "contact"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 397.5
   },
   "right": {
     "id": "9ff474be05ef6f64",
@@ -109,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "小八子.md",
+                "file": "微信图片_20250707141444.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "小八子 的反向链接列表"
+              "title": "微信图片_20250707141444 的反向链接列表"
             }
           },
           {
@@ -128,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "小八子.md",
+                "file": "微信图片_20250707141444.jpg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "小八子 的出链列表"
+              "title": "微信图片_20250707141444 的出链列表"
             }
           },
           {
@@ -171,21 +156,31 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "小八子.md",
+                "file": "微信图片_20250707141444.jpg",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "小八子 的大纲"
+              "title": "微信图片_20250707141444 的大纲"
+            }
+          },
+          {
+            "id": "4516dd0383551f1e",
+            "type": "leaf",
+            "state": {
+              "type": "Friday_Service",
+              "state": {},
+              "icon": "dice-5",
+              "title": "Friday Service"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 619.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,14 +190,59 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false,
+      "mdfriday:管理项目": false,
+      "notebook-navigator:笔记本导航器": false
     }
   },
-  "active": "a77339f7316bd7b1",
+  "active": "4516dd0383551f1e",
   "lastOpenFiles": [
-    "gitignore",
-    "新建文本文档.txt",
-    "牛皮.md",
-    "小八子.md"
+    "xiaoba199303/牛皮.md",
+    "xiaoba199303/未命名.md",
+    "xiaoba199303/小八子.md",
+    "xiaoba199303/Obsidian仓库和GitHub同步.md",
+    "xiaoba199303",
+    "nupugoo/thanks.html",
+    "nupugoo/tags/mdfriday/index.html",
+    "nupugoo/tags/index/index.html",
+    "nupugoo/tags/mdfriday",
+    "nupugoo/tags/index.html",
+    "nupugoo/tags/index",
+    "nupugoo/tags",
+    "nupugoo/sitemap.xml",
+    "nupugoo/site.webmanifest",
+    "nupugoo/img/slide/woosir-mens-leather-weekender-bag-with-shoe-compartment-23woosir85424411-dark-brown-422808 (1).jpg",
+    "nupugoo/img/slide/微信图片_20260108111243_1180_11.jpg",
+    "nupugoo/img/slide/slide01.jpg",
+    "nupugoo/img/slide/slide02.jpg",
+    "nupugoo/img/logo/logo.svg",
+    "nupugoo/img/project.jpeg",
+    "nupugoo/img/default.jpg",
+    "nupugoo/favicon.svg",
+    "nupugoo/favicon-32x32.png",
+    "nupugoo/favicon-16x16.png",
+    "MDFriday/NUPUGOO/content/about.md",
+    "MDFriday/NUPUGOO/content/posts/005-rich-content.md",
+    "MDFriday/NUPUGOO/content/posts/004-math-typesetting.md",
+    "MDFriday/NUPUGOO/content/posts/003-markdown-syntax.md",
+    "MDFriday/NUPUGOO/content/posts/002-about-MDFriday.md",
+    "MDFriday/NUPUGOO/content/posts/001-how-it-works.md",
+    "MDFriday/NUPUGOO/content/posts/_index.md",
+    "MDFriday/NUPUGOO/content/products/example.md",
+    "MDFriday/NUPUGOO/content/products/_index.md",
+    "MDFriday/quartz/content/index.md",
+    "MDFriday/quartz/content/features/wikilinks.md",
+    "MDFriday/quartz/content/features/table of contents.md",
+    "MDFriday/quartz/content/features/popover previews.md",
+    "MDFriday/quartz/content/features/Obsidian compatibility.md",
+    "MDFriday/quartz/content/features/Latex.md",
+    "MDFriday/quartz/content/features/darkmode.md",
+    "MDFriday/quartz/content/features/Mermaid diagrams.md",
+    "MDFriday/quartz/content/features/breadcrumbs.md",
+    "MDFriday/quartz/content/features/full-text search.md",
+    "MDFriday/quartz/content/features/callouts.md",
+    "MDFriday/quartz/content/features/graph view.md",
+    "MDFriday/quartz/content/features/explorer.md"
   ]
 }

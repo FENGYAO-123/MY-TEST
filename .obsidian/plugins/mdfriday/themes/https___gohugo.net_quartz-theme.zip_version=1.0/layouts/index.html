@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="popover-hint">
+    {{- if .Title -}}
+    <header class="article-header">
+        {{- partial "quartz/article-title.html" . -}}
+        {{- partial "quartz/content-meta.html" . -}}
+        {{- partial "quartz/tag-list.html" . -}}
+    </header>
+    {{- end -}}
+    
+    {{- with .WikilinkContent -}}
+    <div class="article-content">
+        {{ . }}
+    </div>
+    {{- end -}}
+    
+    {{- partial "quartz/recent-notes.html" . -}}
+</article>
+{{ end }}
+

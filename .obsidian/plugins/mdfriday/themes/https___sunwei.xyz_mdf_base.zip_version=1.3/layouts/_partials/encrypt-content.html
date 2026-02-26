@@ -1,0 +1,34 @@
+{{- $password := "" -}}
+{{- $level := "" -}}
+{{- $path := "" -}}
+{{- if .Params.password -}}
+{{- $password = .Params.password -}}
+{{- $level = "page" -}}
+{{- $path = .RelPermalink -}}
+{{- else if .Parent -}}
+{{- if .Parent.Params -}}
+{{- if .Parent.Params.password -}}
+{{- $password = .Parent.Params.password -}}
+{{- $level = "parent" -}}
+{{- $path = .Parent.RelPermalink -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if not $password -}}
+{{- if .Site.Params.password -}}
+{{- $password = .Site.Params.password -}}
+{{- $level = "site" -}}
+{{- $path = "/" -}}
+{{- end -}}
+{{- end -}}
+{{- if $password -}}
+<div
+        id="mdf-encrypt-content"
+        data-encrypted="{{ encryptAESGCM $password .Content }}"
+        data-level="{{ $level }}"
+        data-path="{{ $path }}"
+></div>
+{{ partial "encrypt-modal.html" . }}
+{{- else -}}
+{{- .Content -}}
+{{- end -}}

@@ -1,0 +1,26 @@
+{{ $text := .Get "text" }}
+{{ $url := .Get "url" }}
+{{ $class := .Get "class" | default "btn-primary" }}
+{{ $iconName := .Get "icon" }}
+
+<div class="hero-action-item">
+    <a href="{{ $url | relURL }}" class="btn {{ $class }}">
+        {{ if $iconName }}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            {{ partial "icons.html" $iconName }}
+        </svg>
+        {{ end }}
+        <span>{{ $text }}</span>
+    </a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const actionsContainer = document.getElementById('hero-actions');
+    const actionItem = document.querySelector('.hero-action-item');
+    if (actionsContainer && actionItem) {
+        actionsContainer.appendChild(actionItem.firstElementChild.cloneNode(true));
+        actionItem.remove();
+    }
+});
+</script>

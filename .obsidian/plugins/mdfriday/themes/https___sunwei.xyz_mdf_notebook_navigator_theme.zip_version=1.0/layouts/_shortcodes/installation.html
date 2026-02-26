@@ -1,0 +1,37 @@
+{{ $label := .Get "label" }}
+{{ $title := .Get "title" }}
+{{ $plugin := .Get "plugin" }}
+
+<!-- Installation Section -->
+<section id="installation" class="installation">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">{{ $label }}</span>
+            <h2 class="section-title">{{ $title }}</h2>
+        </div>
+        
+        <div class="install-card-single">
+            <div class="install-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+            </div>
+            <h3>{{ i18n "install_from_obsidian" }}</h3>
+            <ol class="install-steps">
+                <li>{{ i18n "install_step_1" }}</li>
+                <li>{{ i18n "install_step_2" }} "{{ $plugin }}"</li>
+                <li>{{ i18n "install_step_3" }}</li>
+            </ol>
+            <div class="install-actions" id="install-actions">
+                <!-- Actions will be populated by install-action shortcodes -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process inner content -->
+<div style="display: none;">
+    {{ .Inner | safeHTML }}
+</div>

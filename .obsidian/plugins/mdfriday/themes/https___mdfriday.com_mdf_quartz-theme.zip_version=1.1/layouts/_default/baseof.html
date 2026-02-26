@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-US" }}" data-theme="light">
+<head>
+    {{- partial "head.html" . -}}
+    {{- partial "global/scripts-head.html" . -}}
+</head>
+<body>
+    {{/* Quartz doesn't use header component - PageTitle handles mobile header */}}
+    
+    <div class="page">
+        <div id="quartz-body">
+            {{/* Left Sidebar */}}
+            <aside class="sidebar left">
+                {{- partial "quartz/page-title.html" . -}}
+                {{- partial "components/spacer.html" . -}}
+                {{/* Flex container for Search, Darkmode, and ReaderMode (Quartz Flex component) */}}
+                <div class="flex-component" style="display: flex; flex-direction: row; gap: 0.5rem; align-items: center;">
+                    {{/* Search grows to fill available space */}}
+                    <div style="flex-grow: 1; flex-shrink: 1; min-width: 0;">
+                        {{- partial "quartz/search.html" . -}}
+                    </div>
+                    {{/* Darkmode button - fixed width */}}
+                    <div style="flex-grow: 0; flex-shrink: 0;">
+                        {{- partial "quartz/darkmode.html" . -}}
+                    </div>
+                    {{/* ReaderMode button - fixed width 
+                         In Quartz, index.md uses ContentPage layout (includes ReaderMode)
+                         while taxonomy/list pages use ListPage layout (no ReaderMode) */}}
+                    {{- if not (or (in .RelPermalink "/tags/") (in .RelPermalink "/categories/")) -}}
+                    <div style="flex-grow: 0; flex-shrink: 0;">
+                        {{- partial "quartz/readermode.html" . -}}
+                    </div>
+                    {{- end -}}
+                </div>
+                {{- partial "quartz/explorer.html" . -}}
+            </aside>
+            
+            {{/* Main Content - Matching Quartz structure */}}
+            <div class="center">
+                <div class="page-header">
+                    {{/* Popover hint contains breadcrumbs and other beforeBody content */}}
+                    <div class="popover-hint">
+                        {{- if not .IsHome -}}
+                        {{- partial "quartz/breadcrumbs.html" . -}}
+                        {{- end -}}
+                    </div>
+                </div>
+                {{- block "main" . }}{{- end }}
+            </div>
+            
+            {{/* Right Sidebar */}}
+            <aside class="sidebar right">
+                {{- partial "quartz/graph.html" . -}}
+                {{- partial "quartz/toc.html" . -}}
+                {{- partial "quartz/backlinks.html" . -}}
+            </aside>
+            
+            {{/* Footer */}}
+            {{- partial "global/footer.html" . -}}
+        </div>
+    </div>
+    
+    {{- partial "global/scripts-body.html" . -}}
+</body>
+</html>
+

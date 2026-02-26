@@ -1,0 +1,30 @@
+{
+  "baseURL": "/s/b1623f077c/v6uraq",
+  "title": "xiaoba",
+  "contentDir": "content",
+  "publishDir": "public",
+  "defaultContentLanguage": "en",
+  "taxonomies": {
+    "tag": "tags",
+    "category": "categories"
+  },
+  "module": {
+    "imports": [
+      {
+        "path": "https://sunwei.xyz/mdf/company_theme_east.zip?version=1.0"
+      }
+    ]
+  },
+  "markdown": {
+    "useInternalRenderer": true
+  },
+  "params": {
+    "branding": false
+  },
+  "languages": {
+    "en": {
+      "contentDir": "content.en",
+      "weight": 2
+    }
+  }
+}

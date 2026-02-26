@@ -1,0 +1,14 @@
+{{ $title := .Get "title" }}
+{{ $image := .Get "image" }}
+
+<div class="showcase-item">
+    <div class="showcase-image">
+        <img src="{{ $image | relURL }}" alt="{{ $title }}" loading="lazy">
+    </div>
+    <div class="showcase-content">
+        <h3>{{ $title }}</h3>
+        <div>
+            {{ .Inner | safeHTML }}
+        </div>
+    </div>
+</div>

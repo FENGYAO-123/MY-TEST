@@ -1,0 +1,27 @@
+{{ $title := .Get "title" }}
+{{ $iconName := .Get "icon" }}
+
+<div class="feature-item">
+    <div class="feature-card">
+        {{ if $iconName }}
+        <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                {{ partial "icons.html" $iconName }}
+            </svg>
+        </div>
+        {{ end }}
+        <h3>{{ $title }}</h3>
+        <p>{{ .Inner | safeHTML }}</p>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const featureGrid = document.getElementById('feature-grid');
+    const featureItem = document.querySelector('.feature-item');
+    if (featureGrid && featureItem) {
+        featureGrid.appendChild(featureItem.firstElementChild.cloneNode(true));
+        featureItem.remove();
+    }
+});
+</script>

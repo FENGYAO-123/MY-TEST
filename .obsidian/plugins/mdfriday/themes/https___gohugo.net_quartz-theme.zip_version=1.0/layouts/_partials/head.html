@@ -1,0 +1,46 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{{/* Page Title */}}
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+{{/* Meta Description */}}
+<meta name="description" content="{{ .Description | default .Site.Params.description }}">
+{{- if .Params.author -}}
+<meta name="author" content="{{ .Params.author }}">
+{{- end -}}
+
+{{/* Canonical URL */}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Meta Tags -->
+{{- partial "meta/main.html" . }}
+
+{{/* Favicon */}}
+<link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}" >
+
+{{/* Google Fonts - Matching Quartz typography config */}}
+{{/* quartz-src/quartz.config.ts: header="Schibsted Grotesk", body="Source Sans Pro", code="IBM Plex Mono" */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400;1,600&display=swap">
+
+{{/* Stylesheets */}}
+<link rel="stylesheet" href="{{ "css/quartz.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/clipboard.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/callout.css" | relURL }}">
+
+{{/* KaTeX - Math rendering (same version as Quartz: 0.16.11) */}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" crossorigin="anonymous"></script>
+<script defer src="{{ "js/katex-render.js" | relURL }}"></script>
+
+{{/* Mermaid - Diagram rendering (loaded dynamically by mermaid-render.js) */}}
+<script type="module" defer src="{{ "js/mermaid-render.js" | relURL }}"></script>
+
+{{/* Theme Color */}}
+<meta name="theme-color" content="#faf8f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161618" media="(prefers-color-scheme: dark)">
+

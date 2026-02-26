@@ -1,0 +1,28 @@
+{{ $value := .Get "value" }}
+{{ $label := .Get "label" }}
+{{ $id := .Get "id" }}
+
+<div class="hero-stat-item">
+    <div class="stat">
+        <span class="stat-value"{{ if $id }} id="{{ $id }}"{{ end }}>{{ $value }}</span>
+        <span class="stat-label">{{ $label }}</span>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const statsContainer = document.getElementById('hero-stats');
+    const statItem = document.querySelector('.hero-stat-item');
+    if (statsContainer && statItem) {
+        // Add divider if not first stat
+        if (statsContainer.children.length > 0) {
+            const divider = document.createElement('div');
+            divider.className = 'stat-divider';
+            statsContainer.appendChild(divider);
+        }
+        
+        statsContainer.appendChild(statItem.firstElementChild.cloneNode(true));
+        statItem.remove();
+    }
+});
+</script>

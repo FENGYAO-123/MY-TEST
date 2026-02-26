@@ -1,0 +1,54 @@
+# English translations
+- id: "blog"
+  translation: "Blog"
+
+- id: "all_posts"
+  translation: "All Posts"
+
+- id: "all_rights_reserved"
+  translation: "All Rights Reserved"
+
+- id: "copied"
+  translation: "Copied!"
+
+- id: "copied_url_title"
+  translation: "Copied the URL and title."
+
+- id: "first"
+  translation: "First"
+
+- id: "prev"
+  translation: "Prev"
+
+- id: "next"
+  translation: "Next"
+
+- id: "last"
+  translation: "Last"
+
+- id: "post"
+  translation: "Post"
+
+- id: "facebook"
+  translation: "Facebook"
+
+- id: "hatena"
+  translation: "Hatena"
+
+- id: "pocket"
+  translation: "Pocket"
+
+- id: "line"
+  translation: "LINE"
+
+- id: "copy"
+  translation: "Copy"
+
+- id: "copy_to_clipboard"
+  translation: "Copy to Clipboard"
+
+- id: "page_navigation"
+  translation: "page navigation"
+
+- id: "share"
+  translation: "Share"

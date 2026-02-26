@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl mb-4">{{.Title}}</h1>
+        <div class="content py-1">{{.Content}}</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2">
+            {{ range sort .Paginator.Pages }}
+            <a href="{{ .Permalink }}">
+                <div class="summary border p-3">
+                    <h2 class="text-3xl">
+                        {{ .Title }}
+                    </h2>
+                    <p>{{ .Description }}</p>
+                </div>
+            </a>
+        {{ end }}
+        </div>
+    </div>
+
+    {{ partial "pagination.html" . }}
+</div>
+{{ end }}

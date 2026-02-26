@@ -1,0 +1,78 @@
+{
+  "username": "k2px-6vmb-nl72@mdfriday.com",
+  "password": "azJweC02dm1iLW5sNzI=",
+  "userToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImV4cCI6IjIwMjYtMDMtMjdUMTI6MDM6MDYuNDM0MjU0MzE4KzA4OjAwIiwiaWF0IjpudWxsLCJpc3MiOm51bGwsImp0aSI6bnVsbCwibmJmIjpudWxsLCJzdWIiOm51bGwsInVzZXIiOiJrMnB4LTZ2bWItbmw3MkBtZGZyaWRheS5jb20ifQ.FEmq3Lvb0eP8MlwveBs45Hj4OQwyqHAiVw4yxeORUZM",
+  "license": {
+    "key": "MDF-K2PX-6VMB-NL72",
+    "plan": "free",
+    "expiresAt": 1772596986596,
+    "features": {
+      "max_devices": 3,
+      "max_ips": 3,
+      "sync_enabled": true,
+      "sync_quota": 500,
+      "publish_enabled": true,
+      "max_sites": 3,
+      "max_storage": 10240,
+      "custom_domain": true,
+      "custom_sub_domain": true,
+      "validity_days": 7
+    },
+    "activatedAt": 1771992187592
+  },
+  "licenseSync": {
+    "enabled": true,
+    "endpoint": "https://cdb.mdfriday.com",
+    "dbName": "userdb-b1623f077cd7879c",
+    "email": "k2px-6vmb-nl72@mdfriday.com",
+    "dbPassword": "azJweC02dm1iLW5sNzI="
+  },
+  "licenseUser": {
+    "email": "k2px-6vmb-nl72@mdfriday.com",
+    "userDir": "b1623f077c"
+  },
+  "licenseUsage": {
+    "totalDiskUsage": 0,
+    "maxStorage": 10240,
+    "unit": "MB",
+    "lastUpdated": 1771992187896
+  },
+  "encryptionPassphrase": "KQbweFJrrfXplFOQmEeMFCxB",
+  "customSubdomain": null,
+  "customDomain": null,
+  "downloadServer": "east",
+  "publishMethod": "ftp",
+  "netlifyAccessToken": "",
+  "netlifyProjectId": "",
+  "ftpServer": "",
+  "ftpUsername": "",
+  "ftpPassword": "",
+  "ftpRemoteDir": "",
+  "ftpIgnoreCert": true,
+  "syncEnabled": true,
+  "syncConfig": {
+    "couchDB_URI": "https://cdb.mdfriday.com",
+    "couchDB_USER": "k2px-6vmb-nl72@mdfriday.com",
+    "couchDB_PASSWORD": "azJweC02dm1iLW5sNzI=",
+    "couchDB_DBNAME": "userdb-b1623f077cd7879c",
+    "encrypt": true,
+    "passphrase": "KQbweFJrrfXplFOQmEeMFCxB",
+    "usePathObfuscation": false,
+    "liveSync": true,
+    "syncOnStart": true,
+    "syncOnSave": true,
+    "ignorePatterns": [],
+    "selectiveSync": {
+      "syncImages": false,
+      "syncAudio": false,
+      "syncVideo": false,
+      "syncPdf": false,
+      "syncThemes": false,
+      "syncSnippets": false,
+      "syncPlugins": false
+    },
+    "syncInternalFilesIgnorePatterns": "\\.obsidian\\/workspace, \\.obsidian\\/workspace\\.json, \\.obsidian\\/workspace-mobile\\.json, \\.obsidian\\/cache, \\/node_modules\\/, \\/\\.git\\/, plugins\\/mdfriday\\/preview, plugins\\/mdfriday\\/themes, \\.obsidian\\/themes, \\.obsidian\\/snippets, \\.obsidian\\/plugins"
+  },
+  "showEditorStatusDisplay": false,
+  "enterpriseServerUrl": "nupugoo.com"
+}

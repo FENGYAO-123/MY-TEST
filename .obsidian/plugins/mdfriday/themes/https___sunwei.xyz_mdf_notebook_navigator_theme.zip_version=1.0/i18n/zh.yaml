@@ -1,0 +1,157 @@
+# 导航
+- id: nav_home
+  translation: 首页
+
+- id: nav_documentation
+  translation: 文档
+
+- id: nav_support
+  translation: 支持
+
+# 目录
+- id: toc_title
+  translation: 目录
+
+# 发布
+- id: view_full_changelog
+  translation: 查看完整更新日志
+
+# 页脚
+- id: footer_theme_credit
+  translation: '主题 <a href="https://theme-ob-plugin.mdfriday.com">Obsidian Plugin</a> 改编自 <a href="https://notebooknavigator.com/">Notebook Navigator</a>'
+
+- id: nav_star_github
+  translation: 在 GitHub 上点星
+
+- id: nav_toggle_theme
+  translation: 切换主题
+
+- id: nav_toggle_navigation
+  translation: 切换导航
+
+- id: nav_change_language
+  translation: 更改语言
+
+# Footer 项目现在在 frontmatter 中配置
+# 只保留必要的 UI 元素用于 i18n
+
+# 安装
+- id: install_from_obsidian
+  translation: 从 Obsidian 安装
+
+- id: install_step_1
+  translation: 打开设置 → 社区插件
+
+- id: install_step_2
+  translation: 搜索
+
+- id: install_step_3
+  translation: 点击安装，然后启用
+
+# 按钮和操作
+- id: btn_install_obsidian
+  translation: 在 Obsidian 中安装
+
+- id: btn_view_documentation
+  translation: 查看文档
+
+- id: btn_get_support
+  translation: 获取支持
+
+- id: btn_buy_me_coffee
+  translation: 请我喝咖啡
+
+- id: btn_sponsor_github
+  translation: 在 GitHub 上赞助
+
+- id: btn_download_manual
+  translation: 下载手动安装
+
+- id: btn_view_releases
+  translation: 查看所有版本
+
+# 统计和标签
+- id: label_free
+  translation: 免费
+
+- id: label_open_source
+  translation: 开源
+
+- id: label_downloads
+  translation: 下载量
+
+- id: label_github_stars
+  translation: GitHub 星标
+
+- id: label_latest_updates
+  translation: 最新更新
+
+- id: label_latest_release
+  translation: 最新版本
+
+# 通用术语
+- id: loading
+  translation: 加载中...
+
+- id: error
+  translation: 错误
+
+- id: success
+  translation: 成功
+
+- id: close
+  translation: 关闭
+
+- id: open
+  translation: 打开
+
+- id: cancel
+  translation: 取消
+
+- id: confirm
+  translation: 确认
+
+- id: save
+  translation: 保存
+
+- id: edit
+  translation: 编辑
+
+- id: delete
+  translation: 删除
+
+- id: search
+  translation: 搜索
+
+- id: filter
+  translation: 筛选
+
+- id: sort
+  translation: 排序
+
+- id: view
+  translation: 查看
+
+- id: download
+  translation: 下载
+
+- id: upload
+  translation: 上传
+
+- id: share
+  translation: 分享
+
+- id: copy
+  translation: 复制
+
+- id: paste
+  translation: 粘贴
+
+- id: cut
+  translation: 剪切
+
+- id: undo
+  translation: 撤销
+
+- id: redo
+  translation: 重做

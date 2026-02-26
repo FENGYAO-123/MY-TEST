@@ -1,0 +1,33 @@
+{{ $title := .Get "title" }}
+{{ $subtitle := .Get "subtitle" }}
+{{ $image := .Get "image" }}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ $title | safeHTML }}</h1>
+            <p class="hero-subtitle">{{ $subtitle }}</p>
+            <div class="hero-actions" id="hero-actions">
+                <!-- Actions will be added by hero-action shortcodes -->
+            </div>
+            <div class="hero-stats" id="hero-stats">
+                <!-- Stats will be added by hero-stat shortcodes -->
+            </div>
+        </div>
+        {{ if $image }}
+        <!-- Hero visual for desktop - shows next to content -->
+        <div class="hero-visual hero-visual-desktop">
+            <img src="{{ $image | relURL }}" alt="{{ .Page.Title }} Interface" class="hero-image" loading="lazy">
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+<!-- Process inner content -->
+{{ .Inner | safeHTML }}

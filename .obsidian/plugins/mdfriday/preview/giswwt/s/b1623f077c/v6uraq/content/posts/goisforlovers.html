@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><title>
+
+
+  
+
+
+(Hu)go Template Primer
+ | xiaoba</title>
+<link rel="icon" href="/s/b1623f077c/v6uraq/favicon.png" >
+<link rel="manifest" href="/s/b1623f077c/v6uraq/manifest.json">
+<link rel="canonical" href="/s/b1623f077c/v6uraq/content/posts/goisforlovers.html"><!-- Theme stylesheet, you can customize scss by creating `assets/custom.scss` in your website -->
+<link rel="stylesheet" href="/s/b1623f077c/v6uraq/book.min.css">
+<link rel="stylesheet" href="/s/b1623f077c/v6uraq/obsidian.css">
+  <script defer src="/s/b1623f077c/v6uraq/fuse.min.js"></script>
+  <script defer src="/s/b1623f077c/v6uraq/en.search.min.5d88e4ab1d75.js" ></script>
+
+  
+
+
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr" style="overflow: auto; -webkit-user-select: text; -moz-user-select: text; user-select: text;" class="theme-light">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/s/b1623f077c/v6uraq/index.html"><span>xiaoba</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/index.html" class="">
+
+
+  
+
+
+Introduction
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/index.html" class="">
+
+
+  
+
+
+Introduction
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+Obsidian
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+Movies
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/obsidian/movies/inception.html" class="">
+
+
+  
+
+
+Inception
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/obsidian/movies/interstellar.html" class="">
+
+
+  
+
+
+Interstellar
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/obsidian/movies/matrix.html" class="">
+
+
+  
+
+
+The Matrix
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/obsidian/dataview.html" class="">
+
+
+  
+
+
+Dataview
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/obsidian/mermaid.html" class="">
+
+
+  
+
+
+Mermaid
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/obsidian/timeline.html" class="">
+
+
+  
+
+
+Timeline
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+Docs
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/abcindex.html" class="">
+
+
+  
+
+
+Introduction
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+Shortcodes
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/bilibili.html" class="">
+
+
+  
+
+
+Bilibili
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/buttons.html" class="">
+
+
+  
+
+
+Buttons
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/hints.html" class="">
+
+
+  
+
+
+Hints
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/instagram.html" class="">
+
+
+  
+
+
+Instagram
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/katex.html" class="">
+
+
+  
+
+
+KaTeX
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/mermaid.html" class="">
+
+
+  
+
+
+Mermaid
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/tabs.html" class="">
+
+
+  
+
+
+Tabs
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/utterances.html" class="">
+
+
+  
+
+
+Utterances
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/vimeo.html" class="">
+
+
+  
+
+
+Vimeo
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/x.html" class="">
+
+
+  
+
+
+X
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/shortcodes/youtube.html" class="">
+
+
+  
+
+
+Youtube
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+Table Of Contents
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/table-of-contents/without-toc.html" class="">
+
+
+  
+
+
+Without ToC
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/table-of-contents/with-toc.html" class="">
+
+
+  
+
+
+With ToC
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b11e7e2fa714c9ec16c5002219d1b42d" class="toggle"  />
+    <label for="section-b11e7e2fa714c9ec16c5002219d1b42d" class="flex">
+      <a href="/s/b1623f077c/v6uraq/content/docs/collapsed/index.html" class="flex-auto ">
+
+
+  
+
+
+Collapsed
+</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+3rd Level
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+4th Level
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/collapsed/3rd-level/4th-level/4th-level.html" class="">
+
+
+  
+
+
+4th Level
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/docs/collapsed/3rd-level/3rd.html" class="">
+
+
+  
+
+
+3rd
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+Obsidian
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <span>
+
+
+  
+
+
+Movies
+</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/obsidian/movies/inception.html" class="">
+
+
+  
+
+
+Inception
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/obsidian/movies/interstellar.html" class="">
+
+
+  
+
+
+Interstellar
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/obsidian/movies/matrix.html" class="">
+
+
+  
+
+
+The Matrix
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/obsidian/dataview.html" class="">
+
+
+  
+
+
+Dataview
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/obsidian/mermaid.html" class="">
+
+
+  
+
+
+Mermaid
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/obsidian/timeline.html" class="">
+
+
+  
+
+
+Timeline
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ac90d90042a20f950db4dad21c87a5ba" class="toggle"  />
+    <label for="section-ac90d90042a20f950db4dad21c87a5ba" class="flex">
+      <a href="/s/b1623f077c/v6uraq/content.zh/posts/index.html" class="flex-auto ">
+
+
+  
+
+
+博客
+</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/posts/creating-a-new-theme.html" class="">
+
+
+  
+
+
+新主题
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/posts/migrate-from-jekyll.html" class="">
+
+
+  
+
+
+Jekyll 迁移
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content.zh/posts/hugoisforlovers.html" class="">
+
+
+  
+
+
+快速开始
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ea937434d0adae47278e5f4959262945" class="toggle" checked />
+    <label for="section-ea937434d0adae47278e5f4959262945" class="flex">
+      <a href="/s/b1623f077c/v6uraq/content/posts/index.html" class="flex-auto ">
+
+
+  
+
+
+Blog
+</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/posts/creating-a-new-theme.html" class="">
+
+
+  
+
+
+Creating a New Theme
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/posts/migrate-from-jekyll.html" class="">
+
+
+  
+
+
+Migrate to Hugo from Jekyll
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/posts/goisforlovers.html" class="active">
+
+
+  
+
+
+(Hu)go Template Primer
+</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/s/b1623f077c/v6uraq/content/posts/hugoisforlovers.html" class="">
+
+
+  
+
+
+Getting Started with Hugo
+</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+</nav>
+
+<!-- Restore menu position as soon as possible to avoid flickering -->
+
+
+  <script>!function(){var o=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(e){localStorage.setItem("menu.scrollTop",o.scrollTop)}),o.scrollTop=localStorage.getItem("menu.scrollTop")}();</script>
+
+
+ <!-- Left menu Content -->
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/s/b1623f077c/v6uraq/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>
+
+
+  
+
+
+(Hu)go Template Primer
+</h3>
+
+  <label for="toc-control">
+    
+    <img src="/s/b1623f077c/v6uraq/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+  <aside class="hidden clearfix">
+    
+
+<nav class="table-of-contents">
+<ul>
+  <li>
+    <a href="#introduction-to-go-templates">Introduction to Go Templates</a>
+  </li>
+  <li>
+    <a href="#basic-syntax">Basic Syntax</a>
+  </li>
+  <li>
+    <a href="#variables">Variables</a>
+  </li>
+  <li>
+    <a href="#functions">Functions</a>
+  </li>
+  <li>
+    <a href="#includes">Includes</a>
+  </li>
+  <li>
+    <a href="#logic">Logic</a>
+    <ul>
+      <li>
+        <a href="#iteration">Iteration</a>
+      </li>
+      <li>
+        <a href="#conditionals">Conditionals</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#pipes">Pipes</a>
+  </li>
+  <li>
+    <a href="#context-aka-the-dot">Context (aka. the dot)</a>
+  </li>
+  <li>
+    <a href="#hugo-parameters">Hugo Parameters</a>
+    <ul>
+      <li>
+        <a href="#using-content-page-parameters">Using Content (page) Parameters</a>
+      </li>
+      <li>
+        <a href="#using-site-config-parameters">Using Site (config) Parameters</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</nav>
+
+
+
+  </aside>
+  
+ <!-- Mobile layout header -->
+      </header>
+
+      
+      
+<article class="markdown book-post">
+    
+
+
+  
+  <div class="text-small">
+    
+      <a href="/s/b1623f077c/v6uraq/categories/development/index.html">Development</a>, 
+      <a href="/s/b1623f077c/v6uraq/categories/golang/index.html">golang</a>
+  </div>
+  
+
+  
+  <div class="text-small">
+    
+      <a href="/s/b1623f077c/v6uraq/tags/development/index.html">development</a>, 
+      <a href="/s/b1623f077c/v6uraq/tags/go/index.html">go</a>, 
+      <a href="/s/b1623f077c/v6uraq/tags/golang/index.html">golang</a>, 
+      <a href="/s/b1623f077c/v6uraq/tags/templates/index.html">templates</a>, 
+      <a href="/s/b1623f077c/v6uraq/tags/themes/index.html">themes</a>
+  </div>
+  
+
+
+    <div class="book-post-content"><style>
+/* Obsidian Base Styles (fallback styles with defaults) */
+
+
+/* Obsidian Plugin and Theme Styles */
+.ͼ1.cm-focused { outline: rgb(33, 33, 33) dotted 1px; }
+.ͼ1 { box-sizing: border-box; flex-direction: column; position: relative !important; display: flex !important; }
+.ͼ1 .cm-scroller { font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0; overflow-anchor: none; display: flex !important; align-items: flex-start !important; }
+.ͼ1 .cm-content[contenteditable="true"] { -webkit-user-modify: read-write-plaintext-only; }
+.ͼ1 .cm-content { margin: 0px; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; overflow-wrap: normal; box-sizing: border-box; min-height: 100%; padding: 4px 0px; outline: none; }
+.ͼ1 .cm-lineWrapping { white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1; }
+.ͼ2 .cm-content { caret-color: black; }
+.ͼ3 .cm-content { caret-color: white; }
+.ͼ1 .cm-line { display: block; padding: 0px 2px 0px 6px; }
+.ͼ1 .cm-layer > * { position: absolute; }
+.ͼ1 .cm-layer { position: absolute; left: 0px; top: 0px; contain: size style; }
+.ͼ2 .cm-selectionBackground { background: rgb(217, 217, 217); }
+.ͼ3 .cm-selectionBackground { background: rgb(34, 34, 34); }
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground { background: rgb(215, 212, 240); }
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground { background: rgb(34, 51, 51); }
+.ͼ1 .cm-cursorLayer { pointer-events: none; }
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer { animation: 1.2s steps(1) 0s infinite normal none running cm-blink; }
+@keyframes cm-blink { 
+  50% { opacity: 0; }
+}
+@keyframes cm-blink2 { 
+  50% { opacity: 0; }
+}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor { border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none; }
+.ͼ1 .cm-cursor { display: none; }
+.ͼ3 .cm-cursor { border-left-color: rgb(221, 221, 221); }
+.ͼ1 .cm-dropCursor { position: absolute; }
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor { display: block; }
+.ͼ1 .cm-iso { unicode-bidi: isolate; }
+.ͼ1 .cm-announced { position: fixed; top: -10000px; }
+@media print {
+  .ͼ1 .cm-announced { display: none; }
+}
+.ͼ2 .cm-activeLine { background-color: rgba(204, 238, 255, 0.267); }
+.ͼ3 .cm-activeLine { background-color: rgba(153, 238, 255, 0.2); }
+.ͼ2 .cm-specialChar { color: red; }
+.ͼ3 .cm-specialChar { color: rgb(255, 119, 136); }
+.ͼ1 .cm-gutters { flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; z-index: 200; }
+.ͼ1 .cm-gutters-before { inset-inline-start: 0px; }
+.ͼ1 .cm-gutters-after { inset-inline-end: 0px; }
+.ͼ2 .cm-gutters.cm-gutters-before { border-right-width: 1px; }
+.ͼ2 .cm-gutters.cm-gutters-after { border-left-width: 1px; }
+.ͼ2 .cm-gutters { background-color: rgb(245, 245, 245); color: rgb(108, 108, 108); border: 0px solid rgb(221, 221, 221); }
+.ͼ3 .cm-gutters { background-color: rgb(51, 51, 56); color: rgb(204, 204, 204); }
+.ͼ1 .cm-gutter { flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden; display: flex !important; }
+.ͼ1 .cm-gutterElement { box-sizing: border-box; }
+.ͼ1 .cm-lineNumbers .cm-gutterElement { padding: 0px 3px 0px 5px; min-width: 20px; text-align: right; white-space: nowrap; }
+.ͼ2 .cm-activeLineGutter { background-color: rgb(226, 242, 255); }
+.ͼ3 .cm-activeLineGutter { background-color: rgb(34, 34, 39); }
+.ͼ1 .cm-panels { box-sizing: border-box; position: sticky; left: 0px; right: 0px; z-index: 300; }
+.ͼ2 .cm-panels { background-color: rgb(245, 245, 245); color: black; }
+.ͼ2 .cm-panels-top { border-bottom: 1px solid rgb(221, 221, 221); }
+.ͼ2 .cm-panels-bottom { border-top: 1px solid rgb(221, 221, 221); }
+.ͼ3 .cm-panels { background-color: rgb(51, 51, 56); color: white; }
+.ͼ1 .cm-dialog label { font-size: 80%; }
+.ͼ1 .cm-dialog { padding: 2px 19px 4px 6px; position: relative; }
+.ͼ1 .cm-dialog-close { position: absolute; top: 3px; right: 4px; background-color: inherit; border: none; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 14px; padding: 0px; }
+.ͼ1 .cm-tab { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.ͼ1 .cm-widgetBuffer { vertical-align: text-top; height: 1em; width: 0px; display: inline; }
+.ͼ1 .cm-placeholder { color: rgb(136, 136, 136); display: inline-block; vertical-align: top; user-select: none; }
+.ͼ1 .cm-highlightSpace { background-image: radial-gradient(circle at 50% 55%, rgb(170, 170, 170) 20%, transparent 5%); background-position: center center; }
+.ͼ1 .cm-highlightTab { background-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"20\"><path stroke=\"%23888\" stroke-width=\"1\" fill=\"none\" d=\"M1 10H196L190 5M190 15L196 10M197 4L197 16\"/></svg>"); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat; }
+.ͼ1 .cm-trailingSpace { background-color: rgba(255, 51, 34, 0.333); }
+.ͼ1 .cm-button { vertical-align: middle; color: inherit; font-size: 70%; padding: 0.2em 1em; border-radius: 1px; }
+.ͼ2 .cm-button:active { background-image: linear-gradient(rgb(180, 180, 180), rgb(208, 211, 214)); }
+.ͼ2 .cm-button { background-image: linear-gradient(rgb(239, 241, 245), rgb(217, 217, 223)); border: 1px solid rgb(136, 136, 136); }
+.ͼ3 .cm-button:active { background-image: linear-gradient(rgb(17, 17, 17), rgb(51, 51, 51)); }
+.ͼ3 .cm-button { background-image: linear-gradient(rgb(57, 57, 57), rgb(17, 17, 17)); border: 1px solid rgb(136, 136, 136); }
+.ͼ1 .cm-textfield { vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: 0.2em 0.5em; }
+.ͼ2 .cm-textfield { background-color: white; }
+.ͼ3 .cm-textfield { border: 1px solid rgb(85, 85, 85); background-color: inherit; }
+.ͼ1 .cm-foldPlaceholder { background-color: rgb(238, 238, 238); border: 1px solid rgb(221, 221, 221); color: rgb(136, 136, 136); border-radius: 0.2em; margin: 0px 1px; padding: 0px 1px; cursor: pointer; }
+.ͼ1 .cm-foldGutter span { padding: 0px 1px; cursor: pointer; }
+@keyframes loading { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.git-signs-gutter {
+  & .cm-gutterElement { padding-top: 0px !important; }
+}
+.workspace-leaf-content[data-type="git-view"] .button-border { border: 2px solid var(--interactive-accent); border-radius: var(--radius-s); }
+.workspace-leaf-content[data-type="git-view"] .view-content { padding-left: 0px; padding-top: 0px; padding-right: 0px; }
+.workspace-leaf-content[data-type="git-history-view"] .view-content { padding-left: 0px; padding-top: 0px; padding-right: 0px; }
+.loading { overflow: hidden; }
+.loading > svg { animation: 2s linear 0s infinite normal none running loading; transform-origin: 50% 50%; display: inline-block; }
+.obsidian-git-center { margin: auto; text-align: center; width: 50%; }
+.obsidian-git-textarea { display: block; margin-left: auto; margin-right: auto; }
+.obsidian-git-disabled { opacity: 0.5; }
+.obsidian-git-center-button { display: block; margin: 20px auto; }
+.tooltip.mod-left { overflow-wrap: break-word; }
+.tooltip.mod-right { overflow-wrap: break-word; }
+.git-view { display: flex; flex-direction: column; position: relative; height: 100%; }
+.git-tools { display: flex; margin-left: auto; }
+.git-tools .type { padding-left: var(--size-2-1); display: flex; align-items: center; justify-content: center; width: 11px; }
+.git-tools .type[data-type="M"] { color: orange; }
+.git-tools .type[data-type="D"] { color: red; }
+.git-tools .buttons { display: flex; }
+.git-tools .buttons > * { padding: 0px; height: auto; }
+.workspace-leaf-content[data-type="git-view"] .tree-item-self, .workspace-leaf-content[data-type="git-history-view"] .tree-item-self { align-items: center; }
+.workspace-leaf-content[data-type="git-view"] .tree-item-self:hover .clickable-icon, .workspace-leaf-content[data-type="git-history-view"] .tree-item-self:hover .clickable-icon { color: var(--icon-color-hover); }
+.is-active .git-tools .buttons > * { color: var(--nav-item-color-active); }
+.git-author { color: var(--text-accent); }
+.git-date { color: var(--text-accent); }
+.git-ref { color: var(--text-accent); }
+.theme-dark, .theme-light { --git-delete-bg: #ff475040; --git-delete-hl: #96050a75; --git-insert-bg: #68d36840; --git-insert-hl: #23c02350; --git-change-bg: #ffd55840; --git-selected: #3572b0; --git-delete: #c33; --git-insert: #399839; --git-change: #d0b44c; --git-move: #3572b0; }
+.git-diff {
+  & .d2h-d-none { display: none; }
+  & .d2h-wrapper { text-align: left; border-radius: 0.25em; overflow: auto; }
+  & .d2h-file-header.d2h-file-header { background-color: var(--background-secondary); border-bottom: 1px solid var(--background-modifier-border); font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; height: 35px; padding: 5px 10px; }
+  & .d2h-file-header, & .d2h-file-stats { display: flex; }
+  & .d2h-file-header { display: none; }
+  & .d2h-file-stats { font-size: 14px; margin-left: auto; }
+  & .d2h-lines-added { border: 1px solid var(--color-green); border-radius: 5px 0px 0px 5px; color: var(--color-green); padding: 2px; text-align: right; vertical-align: middle; }
+  & .d2h-lines-deleted { border: 1px solid var(--color-red); border-radius: 0px 5px 5px 0px; color: var(--color-red); margin-left: 1px; padding: 2px; text-align: left; vertical-align: middle; }
+  & .d2h-file-name-wrapper { -webkit-box-align: center; align-items: center; display: flex; font-size: 15px; width: 100%; }
+  & .d2h-file-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-normal); font-size: var(--h5-size); }
+  & .d2h-file-wrapper { border: 1px solid var(--background-secondary-alt); border-radius: 3px; margin-bottom: 1em; max-height: 100%; }
+  & .d2h-file-collapse { -webkit-box-pack: end; -webkit-box-align: center; align-items: center; border: 1px solid var(--background-secondary-alt); border-radius: 3px; cursor: pointer; display: none; font-size: 12px; justify-content: flex-end; padding: 4px 8px; }
+  & .d2h-file-collapse.d2h-selected { background-color: var(--git-selected); }
+  & .d2h-file-collapse-input { margin: 0px 4px 0px 0px; }
+  & .d2h-diff-table { border-collapse: collapse; font-family: var(--font-monospace); font-size: var(--code-size); width: 100%; }
+  & .d2h-files-diff { width: 100%; }
+  & .d2h-file-diff { border-radius: 5px; font-size: var(--font-text-size); line-height: var(--line-height-normal); }
+  & .d2h-file-side-diff { display: inline-block; margin-bottom: -8px; margin-right: -4px; overflow: scroll hidden; width: 50%; }
+  & .d2h-code-line { padding-left: 6em; padding-right: 1.5em; }
+  & .d2h-code-line, & .d2h-code-side-line { display: inline-block; user-select: none; white-space: nowrap; width: 100%; }
+  & .d2h-code-side-line { padding-left: 0.5em; padding-right: 0.5em; }
+  & .d2h-code-line-ctn { overflow-wrap: normal; background: none; display: inline-block; padding: 0px; user-select: text; vertical-align: middle; width: 100%; white-space: pre-wrap; }
+  & .d2h-code-line del, & .d2h-code-side-line del { background-color: var(--git-delete-hl); color: var(--text-normal); }
+  & .d2h-code-line del, & .d2h-code-line ins, & .d2h-code-side-line del, & .d2h-code-side-line ins { border-radius: 0.2em; display: inline-block; margin-top: -1px; text-decoration: none; vertical-align: middle; }
+  & .d2h-code-line ins, & .d2h-code-side-line ins { background-color: var(--git-insert-hl); text-align: left; }
+  & .d2h-code-line-prefix { overflow-wrap: normal; background: none; display: inline; padding: 0px; white-space: pre; }
+  & .line-num1 { float: left; }
+  & .line-num1, & .line-num2 { box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; width: 2.5em; padding-left: 0px; }
+  & .line-num2 { float: right; }
+  & .d2h-code-linenumber { background-color: var(--background-primary); border-top-color: ; border-top-style: ; border-right-color: ; border-right-style: ; border-bottom-color: ; border-bottom-style: ; border-left-color: ; border-left-style: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-width: 0px 1px; box-sizing: border-box; color: var(--text-faint); cursor: pointer; display: inline-block; position: absolute; text-align: right; width: 5.5em; }
+  & .d2h-code-linenumber::after { content: "​"; }
+  & .d2h-code-side-linenumber { background-color: var(--background-primary); border-top-color: ; border-top-style: ; border-right-color: ; border-right-style: ; border-bottom-color: ; border-bottom-style: ; border-left-color: ; border-left-style: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-width: 0px 1px; box-sizing: border-box; color: var(--text-faint); cursor: pointer; overflow: hidden; padding: 0px 0.5em; text-align: right; text-overflow: ellipsis; width: 4em; display: table-cell; position: relative; }
+  & .d2h-code-side-linenumber::after { content: "​"; }
+  & .d2h-code-side-emptyplaceholder, & .d2h-emptyplaceholder { background-color: var(--background-primary); border-color: var(--background-modifier-border); }
+  & .d2h-code-line-prefix, & .d2h-code-linenumber, & .d2h-code-side-linenumber, & .d2h-emptyplaceholder { user-select: none; }
+  & .d2h-code-linenumber, & .d2h-code-side-linenumber { direction: rtl; }
+  & .d2h-del { background-color: var(--git-delete-bg); border-color: var(--git-delete-hl); }
+  & .d2h-ins { background-color: var(--git-insert-bg); border-color: var(--git-insert-hl); }
+  & .d2h-info { background-color: var(--background-primary); border-color: var(--background-modifier-border); color: var(--text-faint); }
+  & .d2h-del, & .d2h-ins, & .d2h-file-diff .d2h-change { color: var(--text-normal); }
+  & .d2h-file-diff .d2h-del.d2h-change { background-color: var(--git-change-bg); }
+  & .d2h-file-diff .d2h-ins.d2h-change { background-color: var(--git-insert-bg); }
+  & .d2h-file-list-wrapper {
+  & a { text-decoration: none; cursor: default; -webkit-user-drag: none; }
+  & svg { display: none; }
+}
+  & .d2h-file-list-header { text-align: left; }
+  & .d2h-file-list-title { display: none; }
+  & .d2h-file-list-line { display: flex; text-align: left; }
+  & .d2h-file-list { }
+  & .d2h-file-list > li { border-bottom: 1px solid var(--background-modifier-border); margin: 0px; padding: 5px 10px; }
+  & .d2h-file-list > li:last-child { border-bottom: none; }
+  & .d2h-file-switch { cursor: pointer; display: none; font-size: 10px; }
+  & .d2h-icon { fill: currentcolor; margin-right: 10px; vertical-align: middle; }
+  & .d2h-deleted { color: var(--git-delete); }
+  & .d2h-added { color: var(--git-insert); }
+  & .d2h-changed { color: var(--git-change); }
+  & .d2h-moved { color: var(--git-move); }
+  & .d2h-tag { background-color: var(--background-secondary); display: flex; font-size: 10px; margin-left: 5px; padding: 0px 2px; }
+  & .d2h-deleted-tag { border: 1px solid var(--git-delete); }
+  & .d2h-added-tag { border: 1px solid var(--git-insert); }
+  & .d2h-changed-tag { border: 1px solid var(--git-change); }
+  & .d2h-moved-tag { border: 1px solid var(--git-move); }
+  & .d2h-diff-tbody { position: relative; }
+}
+.cm-gutterElement.obs-git-blame-gutter { border-width: 0px 2px 0.2px; border-style: solid; border-color: var(--background-secondary); background-color: var(--background-secondary); }
+.cm-gutterElement.obs-git-blame-gutter > div, .line-author-settings-preview { color: var(--obs-git-gutter-text); font-family: monospace; height: 100%; text-align: right; padding: 0px 6px; white-space: pre; }
+@media (max-width: 800px) {
+  .cm-gutterElement.obs-git-blame-gutter { display: none; }
+}
+.git-unified-diff-view, .git-split-diff-view .cm-deletedLine .cm-changedText { background-color: rgba(238, 68, 51, 0.19); }
+.git-unified-diff-view, .git-split-diff-view .cm-insertedLine .cm-changedText { background-color: rgba(34, 187, 34, 0.19); }
+.git-obscure-prompt[git-is-obscured="true"] #git-show-password::after { mask-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"svg-icon lucide-eye\"><path d=\"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0\"></path><circle cx=\"12\" cy=\"12\" r=\"3\"></circle></svg>"); }
+.git-obscure-prompt[git-is-obscured="false"] #git-show-password::after { mask-image: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"svg-icon lucide-eye-off\"><path d=\"M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49\"></path><path d=\"M14.084 14.158a3 3 0 0 1-4.242-4.242\"></path><path d=\"M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143\"></path><path d=\"m2 2 20 20\"></path></svg>"); }
+.git-split-diff-view .ͼ2 .cm-collapsedLines { background: var(--interactive-normal); border-radius: var(--radius-m); color: var(--text-accent); font-size: var(--font-small); padding: var(--size-4-1) var(--size-4-1); }
+.git-split-diff-view .ͼ2 .cm-collapsedLines:hover { background: var(--interactive-hover); color: var(--text-accent-hover); }
+.git-signs-gutter {
+  & .cm-gutterElement { display: grid; }
+}
+.git-gutter-marker:hover { border-radius: 2px; }
+.git-gutter-marker.git-add { background-color: var(--color-green); justify-self: center; height: inherit; width: 0.2rem; }
+.git-gutter-marker.git-change { background-color: var(--color-yellow); justify-self: center; height: inherit; width: 0.2rem; }
+.git-gutter-marker.git-changedelete { color: var(--color-yellow); font-weight: var(--font-bold); font-size: 1rem; justify-self: center; height: inherit; }
+.git-gutter-marker.git-delete { background-color: var(--color-red); height: 0.2rem; width: 0.8rem; align-self: end; }
+.git-gutter-marker.git-topdelete { background-color: var(--color-red); height: 0.2rem; width: 0.8rem; align-self: start; }
+div:hover > .git-gutter-marker.git-change { width: 0.6rem; }
+div:hover > .git-gutter-marker.git-add { width: 0.6rem; }
+div:hover > .git-gutter-marker.git-delete { height: 0.6rem; }
+div:hover > .git-gutter-marker.git-topdelete { height: 0.6rem; }
+div:hover > .git-gutter-marker.git-changedelete { font-weight: var(--font-bold); }
+.git-gutter-marker.staged { opacity: 0.5; }
+.git-diff {
+  & .cm-merge-revert { width: 4em; }
+  & .cm-merge-revert > * { position: absolute; background-color: var(--background-secondary); display: flex; }
+}
+.cm-gutters.cm-gutters-before:has(> .git-signs-gutter:only-child) {
+  margin-inline-end: 0px;
+  & .git-signs-gutter { margin-inline-start: -1rem; }
+}
+.git-changes-status-bar-colored {
+  & .git-add { color: var(--color-green); }
+  & .git-change { color: var(--color-yellow); }
+  & .git-delete { color: var(--color-red); }
+}
+.git-changes-status-bar .git-add { margin-right: 0.3em; }
+.git-changes-status-bar .git-change { margin-right: 0.3em; }
+.friday-license-status-text { display: block; margin-top: 8px; font-size: 12px; line-height: 1.4; }
+.friday-license-status-text.friday-license-error { color: var(--text-error); }
+.friday-license-status-text.friday-license-success { color: var(--color-green); }
+.friday-plan-badge { display: inline-flex; align-items: center; justify-content: center; padding: 6px 16px; border-radius: 4px; font-size: 12px; font-weight: 600; text-transform: capitalize; min-height: 28px; line-height: 1; transition: transform 0.2s, opacity 0.2s; }
+.friday-plan-badge.clickable { cursor: pointer; user-select: none; }
+.friday-plan-badge.clickable:hover { transform: scale(1.05); opacity: 0.9; }
+.friday-plan-badge.clickable:active { transform: scale(0.98); }
+.friday-plan-badge.refreshing { opacity: 0.7; pointer-events: none; }
+.friday-plan-badge.free { background: linear-gradient(135deg, rgb(156, 163, 175), rgb(107, 114, 128)); color: white; padding-top: 6px !important; }
+.friday-plan-badge.starter { background: linear-gradient(135deg, rgb(59, 130, 246), rgb(37, 99, 235)); color: white; padding-top: 6px !important; }
+.friday-plan-badge.enjoy { background: linear-gradient(135deg, rgb(6, 182, 212), rgb(8, 145, 178)); color: white; padding-top: 6px !important; }
+.friday-plan-badge.creator { background: linear-gradient(135deg, rgb(236, 72, 153), rgb(217, 70, 239)); color: white; padding-top: 6px !important; }
+.friday-plan-badge.pro { background: linear-gradient(135deg, rgb(255, 215, 0), rgb(255, 165, 0)); color: rgb(26, 26, 26); padding-top: 6px !important; }
+.friday-plan-badge.enterprise { background: linear-gradient(135deg, rgb(31, 41, 55), rgb(55, 65, 81)); color: rgb(255, 215, 0); border: 1px solid rgb(255, 215, 0); box-shadow: rgba(255, 215, 0, 0.2) 0px 0px 10px; padding-top: 6px !important; }
+.friday-plan-badge.team { background: linear-gradient(135deg, rgb(147, 51, 234), rgb(124, 58, 237)); color: white; padding-top: 6px !important; }
+.friday-device-count { font-size: 14px; font-weight: 500; color: var(--text-normal); }
+.friday-storage-progress-container { display: flex; flex-direction: column; gap: 8px; min-width: 200px; }
+.friday-storage-usage-text { font-size: 14px; font-weight: 500; color: var(--text-normal); text-align: right; }
+.friday-storage-progress-bar { width: 100%; height: 8px; background-color: var(--background-modifier-border); border-radius: 4px; overflow: hidden; position: relative; }
+.friday-storage-progress-fill { height: 100%; background: var(--interactive-accent); border-radius: 4px; transition: width 0.3s; }
+.friday-security-container { margin-top: 16px; padding: 16px; border: 1px solid var(--background-modifier-border); border-radius: 8px; background-color: var(--background-secondary); }
+.friday-security-container h3 { margin-top: 0px; margin-bottom: 16px; color: var(--text-normal); font-size: 16px; font-weight: 600; }
+.sync-test-status { display: inline-block; margin-left: 8px; font-size: 12px; }
+.sync-test-success { color: var(--color-green); }
+.sync-test-error { color: var(--color-red); }
+.friday-danger-zone { margin-top: 32px; padding: 20px; border: 2px solid var(--text-error); border-radius: 8px; background: var(--background-secondary); }
+.friday-danger-zone-title { margin: 0px 0px 16px; font-size: 16px; font-weight: 600; color: var(--text-error); }
+.friday-theme-modal { width: 90vw; height: 90vh; max-width: 90vw; max-height: 90vh; }
+.friday-theme-modal .modal-bg { backdrop-filter: blur(4px); }
+.friday-theme-modal .modal-content { display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; }
+.friday-theme-modal .search-section { padding: 20px; border-bottom: 1px solid var(--background-modifier-border); flex-shrink: 0; }
+.friday-theme-modal .search-input-wrapper { position: relative; margin-bottom: 16px; }
+.friday-theme-modal .search-input { width: 100%; padding: 10px 40px 10px 12px; border: 1px solid var(--background-modifier-border); border-radius: 4px; background: var(--background-primary); color: var(--text-normal); font-size: 14px; box-sizing: border-box; }
+.friday-theme-modal .search-input:focus { outline: none; border-color: var(--interactive-accent); }
+.friday-theme-modal .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+.friday-theme-modal .tags-section { margin-top: 16px; }
+.friday-theme-modal .tags-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.friday-theme-modal .tags-label { font-size: 14px; font-weight: 500; color: var(--text-normal); }
+.friday-theme-modal .clear-filters-btn { padding: 4px 8px; border: none; border-radius: 3px; background: var(--background-modifier-border); color: var(--text-muted); font-size: 12px; cursor: pointer; transition: 0.2s; }
+.friday-theme-modal .clear-filters-btn:hover { background: var(--background-modifier-hover); color: var(--text-normal); }
+.friday-theme-modal .tags-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.friday-theme-modal .tag-btn { padding: 6px 12px; border: 1px solid var(--background-modifier-border); border-radius: 16px; background: var(--background-secondary); color: var(--text-normal); font-size: 12px; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+.friday-theme-modal .tag-btn:hover { border-color: var(--interactive-accent); background: var(--background-modifier-hover); }
+.friday-theme-modal .tag-btn.selected { background: var(--interactive-accent); color: var(--text-on-accent); border-color: var(--interactive-accent); }
+.friday-theme-modal .themes-section { flex: 1 1 0%; overflow-y: auto; padding: 20px; }
+.friday-theme-modal .loading-message { text-align: center; color: var(--text-muted); padding: 40px; font-size: 14px; }
+.friday-theme-modal .loading-container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px; min-height: 200px; }
+.friday-theme-modal .loading-spinner { width: 40px; height: 40px; border-right-color: ; border-right-style: ; border-right-width: ; border-bottom-color: ; border-bottom-style: ; border-bottom-width: ; border-left-color: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-top: 3px solid var(--interactive-accent); border-radius: 50%; animation: 1s linear 0s infinite normal none running spin; margin-bottom: 20px; }
+@keyframes spin { 
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.friday-theme-modal .loading-text { color: var(--text-muted); font-size: 14px; margin-bottom: 8px; }
+.friday-theme-modal .loading-subtitle { color: var(--text-faint); font-size: 12px; }
+.friday-theme-modal .skeleton-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); max-width: 1400px; margin: 0px auto; gap: 24px; }
+@media (min-width: 1400px) {
+  .friday-theme-modal .skeleton-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.friday-theme-modal .skeleton-card { height: 280px; width: 100%; max-width: 420px; margin: 0px auto; border-radius: 12px; background-image: ; background-position-x: ; background-position-y: ; background-repeat: ; background-attachment: ; background-origin: ; background-clip: ; background-color: ; background-size: 200% 100%; animation: 1.5s ease 0s infinite normal none running skeleton-loading; position: relative; overflow: hidden; }
+@keyframes skeleton-loading { 
+  0% { background-position: 200% 0px; }
+  100% { background-position: -200% 0px; }
+}
+.friday-theme-modal .skeleton-card::after { content: ""; position: absolute; bottom: 20px; left: 20px; right: 20px; height: 60px; background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, transparent 100%); border-radius: 8px; }
+.friday-theme-modal .error-container { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px; min-height: 200px; }
+.friday-theme-modal .error-icon { font-size: 48px; color: var(--text-error); margin-bottom: 16px; }
+.friday-theme-modal .error-message { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; text-align: center; }
+.friday-theme-modal .retry-button { padding: 10px 20px; border: 1px solid var(--interactive-accent); border-radius: 6px; background: var(--interactive-accent); color: var(--text-on-accent); font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.2s; }
+.friday-theme-modal .retry-button:hover { background: var(--interactive-accent-hover); border-color: var(--interactive-accent-hover); transform: translateY(-1px); }
+.friday-theme-modal .no-results { text-align: center; color: var(--text-muted); padding: 40px; }
+.friday-theme-modal .no-results p { margin: 0px 0px 16px; font-size: 16px; }
+.friday-theme-modal .themes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); max-width: 1400px; margin: 0px auto; gap: 24px; }
+@media (min-width: 1400px) {
+  .friday-theme-modal .themes-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.friday-theme-modal .theme-card { position: relative; width: 100%; max-width: 420px; margin: 0px auto; border-radius: 12px; overflow: hidden; cursor: pointer; transition: 0.3s; background: var(--background-primary); border: 1px solid var(--background-modifier-border); box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px; display: flex; flex-direction: column; }
+.friday-theme-modal .theme-card:hover { transform: translateY(-8px); box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 32px; }
+.friday-theme-modal .theme-card.selected { border-color: var(--interactive-accent); box-shadow: 0 0 0 2px var(--interactive-accent), 0 2px 8px rgba(0, 0, 0, 0.1); }
+.friday-theme-modal .theme-card.selected::after { content: "✓"; position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; background: var(--interactive-accent); color: var(--text-on-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: bold; z-index: 10; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px; }
+.friday-theme-modal .theme-image-section { position: relative; width: 100%; aspect-ratio: 4 / 3; background-size: cover; background-position: center center; background-repeat: no-repeat; flex-shrink: 0; }
+.friday-theme-modal .live-demo-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 12px 32px; border: 2px solid white; border-radius: 8px; background: rgba(255, 255, 255, 0.95); color: rgb(51, 51, 51); font-size: 16px; font-weight: 600; text-decoration: none; opacity: 0; transition: 0.3s; z-index: 5; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; white-space: nowrap; }
+.friday-theme-modal .theme-card:hover .live-demo-btn { opacity: 1; }
+.friday-theme-modal .live-demo-btn:hover { background: white; transform: translate(-50%, -50%) scale(1.05); }
+.friday-theme-modal .theme-info-section { display: flex; padding: 16px; gap: 16px; border-bottom: 1px solid var(--background-modifier-border); min-height: 100px; }
+.friday-theme-modal .theme-info-left { flex: 1 1 0%; display: flex; flex-direction: column; gap: 6px; }
+.friday-theme-modal .theme-info-right { display: flex; align-items: flex-start; padding-top: 4px; }
+.friday-theme-modal .theme-title { margin: 0px; font-size: 18px; font-weight: 600; color: var(--text-normal); line-height: 1.3; }
+.friday-theme-modal .theme-meta-info { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+.friday-theme-modal .theme-author { color: var(--text-muted); }
+.friday-theme-modal .theme-version { color: var(--text-muted); font-weight: 500; }
+.friday-theme-modal .separator { color: var(--text-faint); }
+.friday-theme-modal .theme-description { margin: 0px; font-size: 13px; color: var(--text-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.friday-theme-modal .theme-price { font-size: 20px; font-weight: 700; color: var(--text-accent); white-space: nowrap; }
+.friday-theme-modal .theme-bottom-section { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; gap: 12px; }
+.friday-theme-modal .theme-tags { display: flex; flex-wrap: wrap; gap: 6px; flex: 1 1 0%; }
+.friday-theme-modal .tag { background: var(--background-secondary); color: var(--text-muted); padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 500; border: 1px solid var(--background-modifier-border); }
+.friday-theme-modal .use-theme-btn { padding: 8px 20px; border: 1px solid var(--interactive-accent); border-radius: 6px; background: var(--interactive-accent); color: var(--text-on-accent); font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s; white-space: nowrap; flex-shrink: 0; }
+.friday-theme-modal .use-theme-btn:hover { background: var(--interactive-accent-hover); border-color: var(--interactive-accent-hover); transform: translateY(-1px); }
+.friday-theme-modal .use-theme-btn.current { background: var(--background-secondary); color: var(--text-muted); border-color: var(--background-modifier-border); cursor: default; }
+.friday-theme-modal .use-theme-btn.current:hover { transform: none; }
+@media (max-width: 1200px) {
+  .friday-theme-modal .themes-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); max-width: 1200px; }
+  .friday-theme-modal .theme-card { max-width: 360px; }
+  .friday-theme-modal .skeleton-grid { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); max-width: 1200px; }
+  .friday-theme-modal .skeleton-card { height: 320px; max-width: 360px; }
+}
+@media (max-width: 900px) {
+  .friday-theme-modal .themes-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .friday-theme-modal .theme-card { max-width: 300px; }
+  .friday-theme-modal .theme-title { font-size: 16px; }
+  .friday-theme-modal .theme-price { font-size: 18px; }
+  .friday-theme-modal .skeleton-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .friday-theme-modal .skeleton-card { height: 280px; max-width: 300px; }
+  .friday-theme-modal .search-section { padding: 15px; }
+  .friday-theme-modal .themes-section { padding: 15px; }
+}
+@media (max-width: 600px) {
+  .friday-theme-modal .themes-grid { grid-template-columns: 1fr; gap: 16px; }
+  .friday-theme-modal .theme-card { max-width: 100%; }
+  .friday-theme-modal .theme-info-section { flex-direction: column; gap: 8px; }
+  .friday-theme-modal .theme-info-right { align-items: center; justify-content: flex-start; }
+  .friday-theme-modal .theme-bottom-section { flex-direction: column; align-items: stretch; gap: 10px; }
+  .friday-theme-modal .use-theme-btn { width: 100%; }
+  .friday-theme-modal .skeleton-grid { grid-template-columns: 1fr; gap: 16px; }
+  .friday-theme-modal .skeleton-card { height: 260px; max-width: 100%; }
+  .friday-theme-modal .tags-grid { gap: 6px; }
+  .friday-theme-modal .tag-btn { font-size: 11px; padding: 4px 8px; }
+  .friday-theme-modal .search-section { padding: 12px; }
+  .friday-theme-modal .themes-section { padding: 12px; }
+}
+.mdfriday-settings-container, .mdfriday-custom-domain-container, .netlify-settings-container, .ftp-settings-container { margin-top: 16px; padding: 16px; border: 1px solid var(--background-modifier-border); border-radius: 8px; background-color: var(--background-secondary); }
+.mdfriday-settings-container h3, .mdfriday-custom-domain-container h3, .netlify-settings-container h3, .ftp-settings-container h3 { margin-top: 0px; margin-bottom: 16px; color: var(--text-normal); font-size: 16px; font-weight: 600; }
+.ftp-test-success { background-color: var(--color-green) !important; color: white !important; border-color: var(--color-green) !important; }
+.ftp-test-error { background-color: var(--color-red) !important; color: white !important; border-color: var(--color-red) !important; }
+.ftp-test-result { margin-top: 8px; padding: 8px 12px; border-radius: 4px; font-size: 13px; line-height: 1.4; display: block; width: 100%; box-sizing: border-box; clear: both; }
+.ftp-test-result-success { background-color: rgba(var(--color-green-rgb), 0.1); color: var(--color-green); border: 1px solid rgba(var(--color-green-rgb), 0.3); }
+.ftp-test-result-error { background-color: rgba(var(--color-red-rgb), 0.1); color: var(--color-red); border: 1px solid rgba(var(--color-red-rgb), 0.3); }
+.subdomain-status { margin-top: 8px; padding: 8px 12px; border-radius: 4px; font-size: 13px; line-height: 1.4; display: block; width: 100%; box-sizing: border-box; clear: both; }
+.subdomain-status.available { background-color: rgba(var(--color-green-rgb), 0.1); color: var(--color-green); border: 1px solid rgba(var(--color-green-rgb), 0.3); }
+.subdomain-status.unavailable { background-color: rgba(var(--color-blue-rgb), 0.1); color: var(--color-blue); border: 1px solid rgba(var(--color-blue-rgb), 0.3); }
+.subdomain-status.error { background-color: rgba(var(--color-red-rgb), 0.1); color: var(--color-red); border: 1px solid rgba(var(--color-red-rgb), 0.3); }
+.friday-projects-modal { width: 90vw; height: 90vh; max-width: 90vw; max-height: 90vh; }
+.friday-projects-modal .modal-bg { backdrop-filter: blur(4px); }
+.friday-projects-modal .modal-content { height: 100%; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; }
+.projects-main-container { display: flex; height: 100%; gap: 0px; background: var(--background-modifier-border); overflow: hidden; }
+.projects-left-sidebar { width: 30%; background: var(--background-secondary); display: flex; flex-direction: column; overflow: hidden; border-right: 1px solid var(--background-modifier-border); }
+.projects-list-header { padding: 20px 24px 26px; border-bottom: 1px solid var(--background-modifier-border); background: var(--background-secondary); flex-shrink: 0; }
+.projects-list-title { margin: 0px; font-size: 18px; font-weight: 600; color: var(--text-normal); }
+.projects-list-container { flex: 1 1 0%; overflow-y: auto; padding: 12px 16px 12px 20px; }
+.project-item { padding: 14px 16px; margin-bottom: 6px; border-radius: 6px; cursor: pointer; transition: 0.2s; background: var(--background-primary); border: 1px solid transparent; }
+.project-item:hover { background: var(--background-modifier-hover); border-color: var(--background-modifier-border-hover); transform: translateY(-1px); box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 8px; }
+.project-item.selected { background: var(--interactive-accent); border-color: var(--interactive-accent); box-shadow: 0 2px 12px rgba(var(--interactive-accent-rgb), 0.3); }
+.project-item.selected .project-name, .project-item.selected .project-path { color: var(--text-on-accent); }
+.project-name { font-size: 14px; font-weight: 500; color: var(--text-normal); margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.project-path { font-size: 12px; color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.projects-empty-state { padding: 32px 16px; text-align: center; }
+.projects-empty-state .empty-message { color: var(--text-muted); font-style: italic; }
+.projects-right-content { width: 70%; background: var(--background-primary); display: flex; flex-direction: column; overflow: hidden; }
+.project-details-header { padding: 20px 24px; border-bottom: 1px solid var(--background-modifier-border); background: var(--background-secondary); display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+.project-details-title-section { flex: 1 1 0%; }
+.project-details-title { margin: 0px; font-size: 18px; font-weight: 600; color: var(--text-normal); }
+.project-details-actions { display: flex; gap: 8px; }
+.apply-project-btn { padding: 10px 20px; border: none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.2s; background: var(--interactive-accent); color: var(--text-on-accent); box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px; }
+.apply-project-btn:hover { background: var(--interactive-accent-hover); transform: translateY(-1px); box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 12px; }
+.project-details-content { flex: 1 1 0%; overflow-y: auto; padding: 24px; background: var(--background-primary); }
+.project-details-empty { display: flex; align-items: center; justify-content: center; height: 100%; padding: 32px; }
+.project-details-empty .empty-message { color: var(--text-muted); font-size: 16px; font-style: italic; }
+.project-config-section { margin-bottom: 24px; }
+.section-title { margin: 0px 0px 16px; font-size: 16px; font-weight: 600; color: var(--text-normal); }
+.subsection-title { margin: 16px 0px 12px; font-size: 14px; font-weight: 500; color: var(--text-normal); }
+.config-grid { display: grid; gap: 12px; }
+.config-item { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 14px 16px; background: var(--background-secondary); border-radius: 6px; align-items: start; transition: 0.2s; }
+.config-item:hover { background: var(--background-modifier-hover); transform: translateX(2px); }
+.config-label { font-size: 13px; font-weight: 600; color: var(--text-muted); letter-spacing: 0.3px; }
+.config-value { font-size: 13px; color: var(--text-normal); word-break: break-word; line-height: 1.5; }
+.advanced-config-section, .publish-config-section { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--background-modifier-border); }
+.project-history-section { margin-top: 24px; padding-top: 24px; border-top: 2px solid var(--background-modifier-border); }
+.history-list { display: flex; flex-direction: column; gap: 8px; }
+.history-list .empty-message { color: var(--text-muted); font-style: italic; padding: 16px; text-align: center; }
+.history-item { padding: 14px 16px; background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 6px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 13px; transition: 0.2s; }
+.history-item:hover { background: var(--background-modifier-hover); border-color: var(--background-modifier-border-hover); transform: translateX(2px); box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 6px; }
+.history-type-status { flex: 0 0 auto; }
+.history-type { color: var(--text-normal); font-weight: 500; }
+.history-time { color: var(--text-muted); flex: 1 1 auto; }
+.history-method { padding: 2px 8px; background: var(--interactive-accent); color: var(--text-on-accent); border-radius: 3px; font-size: 11px; font-weight: 500; }
+.history-url { color: var(--interactive-accent); text-decoration: none; font-size: 12px; }
+.history-url:hover { text-decoration: underline; }
+.history-export-btn { padding: 4px 12px; border: 1px solid var(--interactive-accent); border-radius: 4px; background: transparent; color: var(--interactive-accent); font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+.history-export-btn:hover { background: var(--interactive-accent); color: var(--text-on-accent); transform: translateY(-1px); box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px; }
+.history-error { width: 100%; margin-top: 4px; padding: 8px; background: var(--background-modifier-error-hover); border-left: 3px solid var(--text-error); color: var(--text-error); font-size: 12px; border-radius: 2px; }
+.projects-list-container::-webkit-scrollbar, .project-details-content::-webkit-scrollbar { width: 8px; }
+.projects-list-container::-webkit-scrollbar-track, .project-details-content::-webkit-scrollbar-track { background: var(--background-primary); }
+.projects-list-container::-webkit-scrollbar-thumb, .project-details-content::-webkit-scrollbar-thumb { background: var(--background-modifier-border); border-radius: 4px; }
+.projects-list-container::-webkit-scrollbar-thumb:hover, .project-details-content::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+@media (max-width: 900px) {
+  .friday-projects-modal .modal { width: 95vw; }
+  .projects-left-sidebar { width: 35%; }
+  .projects-right-content { width: 65%; }
+}
+@media (max-width: 600px) {
+  .projects-main-container { flex-direction: column; }
+  .projects-left-sidebar, .projects-right-content { width: 100%; }
+  .projects-left-sidebar { max-height: 200px; }
+}
+.project-danger-zone { margin-top: 32px; padding: 20px; border: 2px solid var(--text-error); border-radius: 8px; background: var(--background-secondary); }
+.danger-zone-title { margin: 0px 0px 16px; font-size: 16px; font-weight: 600; color: var(--text-error); }
+.danger-zone-content { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.danger-zone-warning { flex: 1 1 0%; }
+.danger-zone-warning strong { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: var(--text-normal); }
+.danger-zone-warning p { margin: 0px; font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+.danger-zone-delete-btn { padding: 10px 20px; border: 1px solid var(--text-error); border-radius: 6px; background: transparent; color: var(--text-error); font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.2s; white-space: nowrap; flex-shrink: 0; }
+.danger-zone-delete-btn:hover { background: var(--text-error); color: var(--text-on-accent); transform: translateY(-1px); box-shadow: rgba(255, 0, 0, 0.2) 0px 2px 8px; }
+.danger-zone-action-btn { padding: 10px 20px; border: 1px solid var(--text-warning); border-radius: 6px; background: transparent; color: var(--text-warning); font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.2s; white-space: nowrap; flex-shrink: 0; }
+.danger-zone-action-btn:hover { background: var(--text-warning); color: var(--text-on-accent); transform: translateY(-1px); box-shadow: rgba(255, 165, 0, 0.2) 0px 2px 8px; }
+.danger-zone-separator { height: 1px; background: var(--background-modifier-border); margin: 20px 0px; }
+.livesync-status { user-select: none; pointer-events: none; height: auto; min-height: 1em; position: absolute; background-color: transparent; width: 100%; padding: 10px 16px 10px 10px; top: var(--header-height); z-index: calc(var(--layer-cover) + 1); font-variant-numeric: tabular-nums; tab-size: 4; text-align: right; white-space: pre-wrap; display: inline-block; color: var(--text-normal); font-size: 80%; }
+div.workspace-leaf-content[data-type="bases"] .livesync-status { top: calc(var(--bases-header-height) + var(--header-height)); padding: 5px 18px 5px 5px; }
+.is-mobile div.workspace-leaf-content[data-type="bases"] .livesync-status { top: calc(var(--bases-header-height) + var(--view-header-height)); padding: 6px 18px 6px 6px; }
+.is-mobile .livesync-status-logmessage { overflow-wrap: break-word; max-width: 100%; display: block; }
+.livesync-status div { opacity: 0.6; filter: grayscale(100%); }
+.livesync-status .livesync-status-loghistory { text-align: left; opacity: 0.4; }
+.livesync-status div.livesync-status-messagearea:empty { display: none; }
+.livesync-status div.livesync-status-messagearea:not(:empty) { opacity: 0.6; color: var(--text-on-accent); border: 1px solid var(--background-modifier-error); background-color: rgba(var(--background-modifier-error-rgb), 0.2); filter: unset; width: fit-content; margin-left: auto; }
+.syncstatusbar { font-size: 12px; font-variant-numeric: tabular-nums; }
+.syncstatusbar.clickable-statusbar { cursor: pointer; transition: opacity 0.2s; }
+.syncstatusbar.clickable-statusbar:hover { opacity: 0.7; }
+.friday-plugin-main.svelte-1xjllom { padding: initial; width: initial; height: initial; position: initial; overflow-y: initial; overflow-wrap: initial; }
+.centered-line.svelte-1xjllom { width: 80%; margin: 20px auto; border-right: none; border-bottom: none; border-left: none; border-image: initial; border-top: 1px solid rgb(64, 64, 64); height: 1px; background-color: transparent; }
+.friday-tab-content.svelte-1xjllom { padding: 10px 0px; }
+.site-builder.svelte-1nad34y { padding: 20px; max-width: 100%; }
+.section.svelte-1nad34y { margin-bottom: 20px; }
+.section-label.svelte-1nad34y { display: block; margin-bottom: 8px; font-weight: 500; color: var(--text-normal); font-size: 14px; }
+.form-input.svelte-1nad34y { width: 100%; padding: 10px 12px; border: 1px solid var(--background-modifier-border); border-radius: 4px; background: var(--background-primary); color: var(--text-normal); font-size: 14px; line-height: 1.4; box-sizing: border-box; min-height: 38px; }
+.form-select.svelte-1nad34y { width: 100%; border: 1px solid var(--background-modifier-border); border-radius: 4px; background-attachment: ; background-origin: ; background-clip: ; background-color: ; color: var(--text-normal); font-size: 14px; line-height: 1.4; box-sizing: border-box; min-height: 38px; appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 40px; }
+.theme-selector.svelte-1nad34y { width: 100%; }
+.current-theme.svelte-1nad34y { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border: 1px solid var(--background-modifier-border); border-radius: 4px; background: var(--background-primary); min-height: 38px; box-sizing: border-box; }
+.theme-name.svelte-1nad34y { color: var(--text-normal); font-size: 14px; flex: 1 1 0%; }
+.theme-actions.svelte-1nad34y { display: flex; align-items: center; gap: 8px; }
+.change-theme-btn.svelte-1nad34y { padding: 6px 12px; border: 1px solid var(--interactive-accent); border-radius: 3px; background: transparent; color: var(--interactive-accent); font-size: 12px; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+.change-theme-btn.svelte-1nad34y:hover { background: var(--interactive-accent); color: var(--text-on-accent); }
+.download-sample-btn.svelte-1nad34y { padding: 6px 12px; border: 1px solid var(--text-accent); border-radius: 3px; background: transparent; color: var(--text-accent); font-size: 12px; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+.download-sample-btn.svelte-1nad34y:hover { background: var(--text-accent); color: var(--text-on-accent); }
+.sample-download-progress.svelte-1nad34y { display: flex; flex-direction: column; gap: 4px; min-width: 120px; }
+.progress-text.svelte-1nad34y { font-size: 11px; color: var(--text-muted); text-align: center; }
+.section-title.svelte-1nad34y { margin: 0px 0px 10px; font-size: 16px; font-weight: 600; color: var(--text-normal); }
+.preview-section.svelte-1nad34y, .publish-section.svelte-1nad34y { padding: 15px; border: 1px solid var(--background-modifier-border); border-radius: 6px; background: var(--background-secondary); }
+.action-button.svelte-1nad34y { padding: 10px 20px; border: none; border-radius: 4px; background: var(--interactive-accent); color: var(--text-on-accent); font-size: 14px; font-weight: 500; cursor: pointer; transition: background-color 0.2s; min-height: 38px; }
+.action-button.svelte-1nad34y:hover:not(:disabled) { background: var(--interactive-accent-hover); }
+.action-button.svelte-1nad34y:disabled { background: var(--background-modifier-border); color: var(--text-muted); cursor: not-allowed; }
+.preview-button.svelte-1nad34y { margin-bottom: 10px; }
+.publish-button.svelte-1nad34y { margin-left: 10px; }
+.preview-link.svelte-1nad34y, .publish-success.svelte-1nad34y { margin-top: 15px; padding: 10px; background: var(--background-primary); border-radius: 4px; border: 1px solid var(--background-modifier-border); }
+.preview-url.svelte-1nad34y, .publish-url.svelte-1nad34y { display: block; color: var(--interactive-accent); text-decoration: none; word-break: break-all; margin-top: 5px; }
+.preview-url.svelte-1nad34y:hover, .publish-url.svelte-1nad34y:hover { text-decoration: underline; }
+.progress-container.svelte-1nad34y { margin: 10px 0px; }
+.progress-container.svelte-1nad34y p:where(.svelte-1nad34y) { margin: 0px 0px 10px; color: var(--text-muted); font-size: 14px; }
+.publish-select-wrapper.svelte-1nad34y { margin-bottom: 16px; }
+.publish-config.svelte-1nad34y { background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 4px; padding: 16px; margin-bottom: 16px; }
+.config-field.svelte-1nad34y { margin-bottom: 16px; }
+.config-field.svelte-1nad34y:last-child { margin-bottom: 0px; }
+.checkbox-label.svelte-1nad34y { display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: var(--text-normal); }
+.checkbox-label.svelte-1nad34y input[type="checkbox"]:where(.svelte-1nad34y) { width: 16px; height: 16px; cursor: pointer; }
+.publish-actions.svelte-1nad34y { margin-top: 16px; }
+.success-message.svelte-1nad34y { margin: 0px 0px 5px; color: var(--text-success); font-weight: 500; }
+.ftp-success-info.svelte-1nad34y { margin: 5px 0px 0px; color: var(--text-muted); font-size: 14px; }
+.preview-actions.svelte-1nad34y { margin-top: 10px; display: flex; gap: 10px; }
+.export-button.svelte-1nad34y { background: var(--interactive-normal); color: var(--text-normal); border: 1px solid var(--background-modifier-border); }
+.export-button.svelte-1nad34y:hover:not(:disabled) { background: var(--interactive-hover); }
+.export-button.svelte-1nad34y:disabled { opacity: 0.6; }
+.advanced-settings.svelte-1nad34y { border: 1px solid var(--background-modifier-border); border-radius: 4px; overflow: hidden; }
+.advanced-toggle.svelte-1nad34y { width: 100%; padding: 12px 16px; border: none; background: transparent; color: var(--text-normal); font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background-color 0.2s; box-shadow: none; }
+.advanced-toggle.svelte-1nad34y:hover { background: var(--background-modifier-hover); }
+.toggle-icon.svelte-1nad34y { transition: transform 0.2s; font-size: 12px; color: var(--text-muted); }
+.toggle-icon.expanded.svelte-1nad34y { transform: rotate(90deg); }
+.advanced-content.svelte-1nad34y { background: var(--background-secondary); padding: 16px; border-top: 1px solid var(--background-modifier-border); }
+.advanced-field.svelte-1nad34y { margin-bottom: 16px; }
+.advanced-field.svelte-1nad34y:last-child { margin-bottom: 0px; }
+.field-hint.svelte-1nad34y { font-size: 12px; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
+.license-warning.svelte-1nad34y { font-size: 12px; color: var(--text-accent); background: var(--background-secondary); border: 1px solid var(--background-modifier-border); padding: 8px 12px; border-radius: 4px; margin-top: 8px; line-height: 1.4; }
+.multilang-table.svelte-1nad34y { border: 1px solid var(--background-modifier-border); border-radius: 4px; overflow: hidden; background: var(--background-primary); }
+.multilang-header.svelte-1nad34y { display: grid; grid-template-columns: 1fr 2fr; background: var(--background-secondary); border-bottom: 1px solid var(--background-modifier-border); }
+.multilang-header-cell.svelte-1nad34y { padding: 10px 12px; font-weight: 500; font-size: 14px; color: var(--text-normal); border-right: 1px solid var(--background-modifier-border); display: flex; align-items: center; justify-content: space-between; overflow: hidden; min-width: 0px; }
+.add-language-btn.svelte-1nad34y { padding: 4px 8px; border: 1px solid var(--interactive-accent); border-radius: 3px; background: transparent; color: var(--interactive-accent); font-size: 11px; cursor: pointer; transition: 0.2s; white-space: nowrap; margin-left: 8px; }
+.add-language-btn.svelte-1nad34y:hover { background: var(--interactive-accent); color: var(--text-on-accent); }
+.multilang-header-cell.svelte-1nad34y:last-child { border-right: none; }
+.multilang-row.svelte-1nad34y { display: grid; grid-template-columns: 1fr 2fr; border-bottom: 1px solid var(--background-modifier-border); transition: background-color 0.2s; }
+.multilang-row.svelte-1nad34y:last-child { border-bottom: none; }
+.multilang-row.svelte-1nad34y:hover { background: var(--background-modifier-hover); }
+.multilang-cell.svelte-1nad34y { padding: 10px 12px; display: flex; align-items: center; border-right: 1px solid var(--background-modifier-border); min-height: 38px; box-sizing: border-box; overflow: hidden; min-width: 0px; }
+.multilang-cell.svelte-1nad34y:last-child { border-right: none; }
+.content-path-cell.svelte-1nad34y { gap: 8px; }
+.content-path.svelte-1nad34y { color: var(--text-normal); font-size: 14px; flex: 1 1 0%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0px; }
+.default-badge.svelte-1nad34y { background: var(--interactive-accent); color: var(--text-on-accent); padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+.language-cell.svelte-1nad34y { display: flex; align-items: center; gap: 8px; }
+.language-select.svelte-1nad34y { flex: 1 1 0%; max-width: 180px; padding: 4px 24px 4px 8px; border: 1px solid var(--background-modifier-border); border-radius: 3px; background-attachment: ; background-origin: ; background-clip: ; background-color: ; color: var(--text-normal); font-size: 13px; appearance: none; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 6px center; background-size: 12px; }
+.remove-btn.svelte-1nad34y { width: 20px; height: 20px; border: none; border-radius: 50%; background: transparent; color: var(--text-muted); font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; opacity: 0; margin-left: 4px; }
+.multilang-row.svelte-1nad34y:hover .remove-btn:where(.svelte-1nad34y) { opacity: 1; }
+.remove-btn.svelte-1nad34y:hover { background: var(--background-modifier-error); color: var(--text-on-accent); transform: scale(1.1); }
+.remove-icon.svelte-1nad34y { line-height: 1; font-weight: bold; }
+.multilang-empty.svelte-1nad34y { padding: 20px; text-align: center; color: var(--text-muted); font-style: italic; }
+.empty-message.svelte-1nad34y { font-size: 14px; }
+.site-assets-container.svelte-1nad34y { border: 1px solid var(--background-modifier-border); border-radius: 4px; background: var(--background-primary); }
+.assets-display.svelte-1nad34y { padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; min-height: 38px; box-sizing: border-box; }
+.assets-path.svelte-1nad34y { color: var(--text-normal); font-size: 14px; flex: 1 1 0%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0px; }
+.assets-placeholder.svelte-1nad34y { color: var(--text-muted); font-size: 14px; font-style: italic; flex: 1 1 0%; }
+.clear-assets-btn.svelte-1nad34y { padding: 4px 8px; border: 1px solid var(--interactive-accent); border-radius: 3px; background: transparent; color: var(--interactive-accent); font-size: 11px; cursor: pointer; transition: 0.2s; white-space: nowrap; margin-left: 8px; }
+.clear-assets-btn.svelte-1nad34y:hover { background: var(--interactive-accent); color: var(--text-on-accent); }
+.assets-hint.svelte-1nad34y { padding: 8px 12px; background: var(--background-secondary); border-top: 1px solid var(--background-modifier-border); font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+.ftp-test-btn.svelte-1nad34y { padding: 10px 20px; border: 1px solid var(--interactive-accent); border-radius: 4px; background: transparent; color: var(--interactive-accent); font-size: 14px; font-weight: 500; cursor: pointer; transition: 0.2s; min-height: 38px; }
+.ftp-test-btn.svelte-1nad34y:hover:not(:disabled) { background: var(--interactive-accent); color: var(--text-on-accent); }
+.ftp-test-btn.svelte-1nad34y:disabled { opacity: 0.6; cursor: not-allowed; }
+.ftp-test-btn.ftp-test-success.svelte-1nad34y { background-color: var(--color-green) !important; color: white !important; border-color: var(--color-green) !important; }
+.ftp-test-btn.ftp-test-error.svelte-1nad34y { background-color: var(--color-red) !important; color: white !important; border-color: var(--color-red) !important; }
+.ftp-test-result.svelte-1nad34y { margin-top: 8px; padding: 8px 12px; border-radius: 4px; font-size: 13px; line-height: 1.4; display: block; width: 100%; box-sizing: border-box; }
+.ftp-test-result-success.svelte-1nad34y { background-color: rgba(var(--color-green-rgb), 0.1); color: var(--color-green); border: 1px solid rgba(var(--color-green-rgb), 0.3); }
+.ftp-test-result-error.svelte-1nad34y { background-color: rgba(var(--color-red-rgb), 0.1); color: var(--color-red); border: 1px solid rgba(var(--color-red-rgb), 0.3); }
+.mdf-info.svelte-m7tqwz { font-size: 0.9em; text-align: center; }
+.progress-container.svelte-1gahl8f { width: 100%; background-color: rgb(224, 224, 224); border-radius: 8px; height: 10px; margin-top: 10px; overflow: hidden; position: relative; }
+.progress-bar.svelte-1gahl8f { height: 10px; background-color: rgb(124, 58, 237); transition: width 0.4s; position: absolute; top: 0px; left: 0px; }
+
+
+
+
+</style>
+
+<div class="obsidian-content-wrapper theme-light">
+  <div class="markdown-preview-view markdown-rendered">
+    <p dir="auto">Hugo uses the excellent <a data-tooltip-position="top" aria-label="https://golang.org/" rel="noopener nofollow" class="external-link" href="https://golang.org/" target="_blank">Go</a> <a data-tooltip-position="top" aria-label="https://golang.org/pkg/html/template/" rel="noopener nofollow" class="external-link" href="https://golang.org/pkg/html/template/" target="_blank">html/template</a> library for<br>
+its template engine. It is an extremely lightweight engine that provides a very<br>
+small amount of logic. In our experience that it is just the right amount of<br>
+logic to be able to create a good static website. If you have used other<br>
+template systems from different languages or frameworks you will find a lot of<br>
+similarities in Go templates.</p>
+<p dir="auto">This document is a brief primer on using Go templates. The <a data-tooltip-position="top" aria-label="https://golang.org/pkg/html/template/" rel="noopener nofollow" class="external-link" href="https://golang.org/pkg/html/template/" target="_blank">Go docs</a><br>
+provide more details.</p>
+<h2 data-heading="Introduction to Go Templates" dir="auto" id="introduction-to-go-templates">Introduction to Go Templates</h2>
+<p dir="auto">Go templates provide an extremely simple template language. It adheres to the<br>
+belief that only the most basic of logic belongs in the template or view layer.<br>
+One consequence of this simplicity is that Go templates parse very quickly.</p>
+<p dir="auto">A unique characteristic of Go templates is they are content aware. Variables and<br>
+content will be sanitized depending on the context of where they are used. More<br>
+details can be found in the <a data-tooltip-position="top" aria-label="https://golang.org/pkg/html/template/" rel="noopener nofollow" class="external-link" href="https://golang.org/pkg/html/template/" target="_blank">Go docs</a>.</p>
+<h2 data-heading="Basic Syntax" dir="auto" id="basic-syntax">Basic Syntax</h2>
+<p dir="auto">Golang templates are HTML files with the addition of variables and<br>
+functions.</p>
+<p dir="auto"><strong>Go variables and functions are accessible within {{ }}</strong></p>
+<p dir="auto">Accessing a predefined variable "foo":</p>
+<pre><code>{{ foo }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Parameters are separated using spaces</strong></p>
+<p dir="auto">Calling the add function with input of 1, 2:</p>
+<pre><code>{{ add 1 2 }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Methods and fields are accessed via dot notation</strong></p>
+<p dir="auto">Accessing the Page Parameter "bar"</p>
+<pre><code>{{ .Params.bar }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Parentheses can be used to group items together</strong></p>
+<pre><code>{{ if or (isset .Params "alt") (isset .Params "caption") }} Caption {{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="Variables" dir="auto" id="variables">Variables</h2>
+<p dir="auto">Each Go template has a struct (object) made available to it. In hugo each<br>
+template is passed either a page or a node struct depending on which type of<br>
+page you are rendering. More details are available on the<br>
+<a class="internal-link" data-href="/layout/variables" href="/layout/variables" target="_blank" rel="noopener nofollow">variables</a> page.</p>
+<p dir="auto">A variable is accessed by referencing the variable name.</p>
+<pre><code>&lt;title&gt;{{ .Title }}&lt;/title&gt;
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Variables can also be defined and referenced.</p>
+<pre><code>{{ $address := "123 Main St."}}
+{{ $address }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="Functions" dir="auto" id="functions">Functions</h2>
+<p dir="auto">Go template ship with a few functions which provide basic functionality. The Go<br>
+template system also provides a mechanism for applications to extend the<br>
+available functions with their own. <a class="internal-link" data-href="/layout/functions" href="/layout/functions" target="_blank" rel="noopener nofollow">Hugo template<br>
+functions</a> provide some additional functionality we believe<br>
+are useful for building websites. Functions are called by using their name<br>
+followed by the required parameters separated by spaces. Template<br>
+functions cannot be added without recompiling hugo.</p>
+<p dir="auto"><strong>Example:</strong></p>
+<pre><code>{{ add 1 2 }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="Includes" dir="auto" id="includes">Includes</h2>
+<p dir="auto">When including another template you will pass to it the data it will be<br>
+able to access. To pass along the current context please remember to<br>
+include a trailing dot. The templates location will always be starting at<br>
+the /layout/ directory within Hugo.</p>
+<p dir="auto"><strong>Example:</strong></p>
+<pre><code>{{ template "chrome/header.html" . }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="Logic" dir="auto" id="logic">Logic</h2>
+<p dir="auto">Go templates provide the most basic iteration and conditional logic.</p>
+<h3 data-heading="Iteration" dir="auto" id="iteration">Iteration</h3>
+<p dir="auto">Just like in Go, the Go templates make heavy use of range to iterate over<br>
+a map, array or slice. The following are different examples of how to use<br>
+range.</p>
+<p dir="auto"><strong>Example 1: Using Context</strong></p>
+<pre><code>{{ range array }}
+    {{ . }}
+{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Example 2: Declaring value variable name</strong></p>
+<pre><code>{{range $element := array}}
+    {{ $element }}
+{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Example 2: Declaring key and value variable name</strong></p>
+<pre><code>{{range $index, $element := array}}
+    {{ $index }}
+    {{ $element }}
+{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="Conditionals" dir="auto" id="conditionals">Conditionals</h3>
+<p dir="auto">If, else, with, or, &amp; and provide the framework for handling conditional<br>
+logic in Go Templates. Like range, each statement is closed with <code>end</code>.</p>
+<p dir="auto">Go Templates treat the following values as false:</p>
+<ul>
+<li dir="auto">false</li>
+<li dir="auto">0</li>
+<li dir="auto">any array, slice, map, or string of length zero</li>
+</ul>
+<p dir="auto"><strong>Example 1: If</strong></p>
+<pre><code>{{ if isset .Params "title" }}&lt;h4&gt;{{ index .Params "title" }}&lt;/h4&gt;{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Example 2: If -&gt; Else</strong></p>
+<pre><code>{{ if isset .Params "alt" }}
+    {{ index .Params "alt" }}
+{{else}}
+    {{ index .Params "caption" }}
+{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Example 3: And &amp; Or</strong></p>
+<pre><code>{{ if and (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Example 4: With</strong></p>
+<p dir="auto">An alternative way of writing "if" and then referencing the same value<br>
+is to use "with" instead. With rebinds the context <code>.</code> within its scope,<br>
+and skips the block if the variable is absent.</p>
+<p dir="auto">The first example above could be simplified as:</p>
+<pre><code>{{ with .Params.title }}&lt;h4&gt;{{ . }}&lt;/h4&gt;{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Example 5: If -&gt; Else If</strong></p>
+<pre><code>{{ if isset .Params "alt" }}
+    {{ index .Params "alt" }}
+{{ else if isset .Params "caption" }}
+    {{ index .Params "caption" }}
+{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="Pipes" dir="auto" id="pipes">Pipes</h2>
+<p dir="auto">One of the most powerful components of Go templates is the ability to<br>
+stack actions one after another. This is done by using pipes. Borrowed<br>
+from unix pipes, the concept is simple, each pipeline's output becomes the<br>
+input of the following pipe.</p>
+<p dir="auto">Because of the very simple syntax of Go templates, the pipe is essential<br>
+to being able to chain together function calls. One limitation of the<br>
+pipes is that they only can work with a single value and that value<br>
+becomes the last parameter of the next pipeline.</p>
+<p dir="auto">A few simple examples should help convey how to use the pipe.</p>
+<p dir="auto"><strong>Example 1 :</strong></p>
+<pre><code>{{ if eq 1 1 }} Same {{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">is the same as</p>
+<pre><code>{{ eq 1 1 | if }} Same {{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">It does look odd to place the if at the end, but it does provide a good<br>
+illustration of how to use the pipes.</p>
+<p dir="auto"><strong>Example 2 :</strong></p>
+<pre><code>{{ index .Params "disqus_url" | html }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Access the page parameter called "disqus_url" and escape the HTML.</p>
+<p dir="auto"><strong>Example 3 :</strong></p>
+<pre><code>{{ if or (or (isset .Params "title") (isset .Params "caption")) (isset .Params "attr")}}
+Stuff Here
+{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Could be rewritten as</p>
+<pre><code>{{  isset .Params "caption" | or isset .Params "title" | or isset .Params "attr" | if }}
+Stuff Here
+{{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="Context (aka. the dot)" dir="auto" id="context-aka-the-dot">Context (aka. the dot)</h2>
+<p dir="auto">The most easily overlooked concept to understand about Go templates is that {{ . }}<br>
+always refers to the current context. In the top level of your template this<br>
+will be the data set made available to it. Inside of a iteration it will have<br>
+the value of the current item. When inside of a loop the context has changed. .<br>
+will no longer refer to the data available to the entire page. If you need to<br>
+access this from within the loop you will likely want to set it to a variable<br>
+instead of depending on the context.</p>
+<p dir="auto"><strong>Example:</strong></p>
+<pre><code>  {{ $title := .Site.Title }}
+  {{ range .Params.tags }}
+    &lt;li&gt; &lt;a href="{{ $baseurl }}/tags/{{ . | urlize }}"&gt;{{ . }}&lt;/a&gt; - {{ $title }} &lt;/li&gt;
+  {{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Notice how once we have entered the loop the value of {{ . }} has changed. We<br>
+have defined a variable outside of the loop so we have access to it from within<br>
+the loop.</p>
+<h1 data-heading="Hugo Parameters" dir="auto" id="hugo-parameters">Hugo Parameters</h1>
+<p dir="auto">Hugo provides the option of passing values to the template language<br>
+through the site configuration (for sitewide values), or through the meta<br>
+data of each specific piece of content. You can define any values of any<br>
+type (supported by your front matter/config format) and use them however<br>
+you want to inside of your templates.</p>
+<h2 data-heading="Using Content (page) Parameters" dir="auto" id="using-content-page-parameters">Using Content (page) Parameters</h2>
+<p dir="auto">In each piece of content you can provide variables to be used by the<br>
+templates. This happens in the <a class="internal-link" data-href="/content/front-matter" href="/content/front-matter" target="_blank" rel="noopener nofollow">front matter</a>.</p>
+<p dir="auto">An example of this is used in this documentation site. Most of the pages<br>
+benefit from having the table of contents provided. Sometimes the TOC just<br>
+doesn't make a lot of sense. We've defined a variable in our front matter<br>
+of some pages to turn off the TOC from being displayed.</p>
+<p dir="auto">Here is the example front matter:</p>
+<pre><code>---
+title: "Permalinks"
+date: "2013-11-18"
+aliases:
+  - "/doc/permalinks/"
+groups: ["extras"]
+groups_weight: 30
+notoc: true
+---
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Here is the corresponding code inside of the template:</p>
+<pre><code>  {{ if not .Params.notoc }}
+    &lt;div id="toc" class="well col-md-4 col-sm-6"&gt;
+    {{ .TableOfContents }}
+    &lt;/div&gt;
+  {{ end }}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="Using Site (config) Parameters" dir="auto" id="using-site-config-parameters">Using Site (config) Parameters</h2>
+<p dir="auto">In your top-level configuration file (eg, <code>config.yaml</code>) you can define site<br>
+parameters, which are values which will be available to you in chrome.</p>
+<p dir="auto">For instance, you might declare:</p>
+<pre class="language-yaml"><code class="language-yaml is-loaded"><span class="token key atrule">params</span><span class="token punctuation">:</span>
+  <span class="token key atrule">CopyrightHTML</span><span class="token punctuation">:</span> <span class="token string">"Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved."</span>
+  <span class="token key atrule">TwitterUser</span><span class="token punctuation">:</span> <span class="token string">"spf13"</span>
+  <span class="token key atrule">SidebarRecentLimit</span><span class="token punctuation">:</span> <span class="token number">5</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Within a footer layout, you might then declare a <code>&lt;footer&gt;</code> which is only<br>
+provided if the <code>CopyrightHTML</code> parameter is provided, and if it is given,<br>
+you would declare it to be HTML-safe, so that the HTML entity is not escaped<br>
+again.  This would let you easily update just your top-level config file each<br>
+January 1st, instead of hunting through your templates.</p>
+<pre><code>{{if .Site.Params.CopyrightHTML}}&lt;footer&gt;
+&lt;div class="text-center"&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
+&lt;/footer&gt;{{end}}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">An alternative way of writing the "if" and then referencing the same value<br>
+is to use "with" instead. With rebinds the context <code>.</code> within its scope,<br>
+and skips the block if the variable is absent:</p>
+<pre><code>{{with .Site.Params.TwitterUser}}&lt;span class="twitter"&gt;
+&lt;a href="https://twitter.com/{{.}}" rel="author"&gt;
+&lt;img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
+ alt="Twitter"&gt;&lt;/a&gt;
+&lt;/span&gt;{{end}}
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Finally, if you want to pull "magic constants" out of your layouts, you can do<br>
+so, such as in this example:</p>
+<pre><code>&lt;nav class="recent"&gt;
+  &lt;h1&gt;Recent Posts&lt;/h1&gt;
+  &lt;ul&gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
+    &lt;li&gt;&lt;a href="{{.RelPermalink}}"&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
+  {{end}}&lt;/ul&gt;
+&lt;/nav&gt;
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+  </div>
+</div></div>
+</article>
+ <!-- Page Content -->
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>document.querySelectorAll("pre code").forEach(e=>{e.addEventListener("click",function(t){window.getSelection().toString()||(function(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}(e.parentElement),navigator.clipboard&&navigator.clipboard.writeText(e.parentElement.textContent))})});</script>
+
+
+ <!-- Footer under page content -->
+        
+      </footer>
+
+      
+
+ <!-- Comments block -->
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+
+<nav class="table-of-contents">
+<ul>
+  <li>
+    <a href="#introduction-to-go-templates">Introduction to Go Templates</a>
+  </li>
+  <li>
+    <a href="#basic-syntax">Basic Syntax</a>
+  </li>
+  <li>
+    <a href="#variables">Variables</a>
+  </li>
+  <li>
+    <a href="#functions">Functions</a>
+  </li>
+  <li>
+    <a href="#includes">Includes</a>
+  </li>
+  <li>
+    <a href="#logic">Logic</a>
+    <ul>
+      <li>
+        <a href="#iteration">Iteration</a>
+      </li>
+      <li>
+        <a href="#conditionals">Conditionals</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#pipes">Pipes</a>
+  </li>
+  <li>
+    <a href="#context-aka-the-dot">Context (aka. the dot)</a>
+  </li>
+  <li>
+    <a href="#hugo-parameters">Hugo Parameters</a>
+    <ul>
+      <li>
+        <a href="#using-content-page-parameters">Using Content (page) Parameters</a>
+      </li>
+      <li>
+        <a href="#using-site-config-parameters">Using Site (config) Parameters</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</nav>
+
+
+ <!-- Table of Contents -->
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

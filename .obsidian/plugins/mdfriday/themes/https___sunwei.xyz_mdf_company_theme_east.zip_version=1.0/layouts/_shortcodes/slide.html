@@ -1,0 +1,6 @@
+<div class="swiper-slide">
+    <img src="{{ .Get "image" | relURL }}" alt="{{ .Get "alt" }}">
+    <div class="s-fade-txt">
+        <h1 class="text-4xl {{ or (.Get "color") "text-white" }}">{{ .Get "title" }}</h1>
+    </div>
+</div>

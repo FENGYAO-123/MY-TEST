@@ -1,0 +1,16 @@
+{{ $label := .Get "label" }}
+{{ $title := .Get "title" }}
+
+<!-- Showcase Section -->
+<section id="showcase" class="showcase">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">{{ $label }}</span>
+            <h2 class="section-title">{{ $title }}</h2>
+        </div>
+        
+        <div class="showcase-grid" id="showcase-grid">
+            {{ .Inner | safeHTML }}
+        </div>
+    </div>
+</section>

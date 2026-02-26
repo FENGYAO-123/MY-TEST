@@ -1,0 +1,90 @@
+# Navigation
+- id: nav_home
+  translation: Inicio
+
+- id: nav_documentation
+  translation: Documentación
+
+- id: nav_support
+  translation: Soporte
+
+# Tabla de contenidos
+- id: toc_title
+  translation: TABLA DE CONTENIDOS
+
+# Versiones
+- id: view_full_changelog
+  translation: Ver registro completo de cambios
+
+# Pie de página
+- id: footer_theme_credit
+  translation: 'Tema <a href="https://theme-ob-plugin.mdfriday.com">Obsidian Plugin</a> adaptado de <a href="https://notebooknavigator.com/">Notebook Navigator</a>'
+
+- id: nav_star_github
+  translation: Estrella en GitHub
+
+- id: nav_toggle_theme
+  translation: Cambiar tema
+
+- id: nav_toggle_navigation
+  translation: Alternar navegación
+
+- id: nav_change_language
+  translation: Cambiar idioma
+
+# Los elementos del pie de página ahora son configurables en frontmatter
+# Solo mantener elementos UI esenciales para i18n
+
+# Installation
+- id: install_from_obsidian
+  translation: Instalar desde Obsidian
+
+- id: install_step_1
+  translation: Abrir Configuración → Plugins de la comunidad
+
+- id: install_step_2
+  translation: Buscar
+
+- id: install_step_3
+  translation: Hacer clic en Instalar, luego Habilitar
+
+# Buttons and Actions
+- id: btn_install_obsidian
+  translation: Instalar en Obsidian
+
+- id: btn_view_documentation
+  translation: Ver documentación
+
+- id: btn_get_support
+  translation: Obtener soporte
+
+- id: btn_buy_me_coffee
+  translation: Cómprame un café
+
+- id: btn_sponsor_github
+  translation: Patrocinar en GitHub
+
+- id: btn_download_manual
+  translation: Descargar instalación manual
+
+- id: btn_view_releases
+  translation: Ver todas las versiones
+
+# Stats and Labels
+- id: label_free
+  translation: Gratis
+
+- id: label_open_source
+  translation: Código abierto
+
+- id: label_downloads
+  translation: Descargas
+
+- id: label_github_stars
+  translation: Estrellas GitHub
+
+- id: label_latest_updates
+  translation: Últimas actualizaciones
+
+- id: label_latest_release
+  translation: Última versión

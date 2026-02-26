@@ -1,0 +1,49 @@
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <img src="{{ "logo.svg" | relURL }}" alt="{{ .Site.Organization.Name }}" class="footer-logo">
+                    <span>{{ .Site.Organization.Name }}</span>
+                </div>
+                <p class="footer-description">{{ .Site.Organization.Description }}</p>
+
+                <div class="footer-social">
+
+                    {{ range .Site.Organization.Socials }}
+                    <a href="{{ .Link }}" aria-label="{{ .ID }}">
+                        {{ partial "social_icon" (dict "PlatformId" .ID) }}
+                    </a>
+                    {{ end }}
+
+                </div>
+            </div>
+
+            {{ range .Site.Menus.Footer }}
+            <div class="footer-section">
+                <h4>{{ .Title }}</h4>
+                <ul>
+                    {{ if .HasChildren }}
+                    {{ range .Children }}
+                    <li><a href="{{ .URL | relLangURL }}">{{ .Title }}</a></li>
+                    {{ end }}
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© {{ now.Format "2006" }} {{ .Site.Organization.Name }}. All rights reserved.</p>
+            <p>{{ i18n "footer_theme_credit" | safeHTML }}</p>
+        </div>
+    </div>
+
+    {{ partial "google_analytics" . }}
+    {{ if .Site.Params.branding }}
+    {{ partial "mdf-brand" . }}
+    {{ end }}
+
+</footer>

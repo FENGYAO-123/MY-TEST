@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="popover-hint">
+    <header class="article-header">
+        <h1>{{ .Title | title }}</h1>
+        {{- if .Content -}}
+        <div class="article-content">
+            {{ .Content }}
+        </div>
+        {{- end -}}
+    </header>
+
+    {{- partial "components/page-list.html" . -}}
+</article>
+{{ end }}
+

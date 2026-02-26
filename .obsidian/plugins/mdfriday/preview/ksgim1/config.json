@@ -1,0 +1,30 @@
+{
+  "baseURL": "/s/b1623f077c/xiaoba1231613123",
+  "title": "xiaoba1231",
+  "contentDir": "content",
+  "publishDir": "public",
+  "defaultContentLanguage": "en",
+  "taxonomies": {
+    "tag": "tags",
+    "category": "categories"
+  },
+  "module": {
+    "imports": [
+      {
+        "path": "https://mdfriday.com/mdf/quartz-theme.zip?version=1.1"
+      }
+    ]
+  },
+  "markdown": {
+    "useInternalRenderer": true
+  },
+  "params": {
+    "branding": false
+  },
+  "languages": {
+    "zh": {
+      "contentDir": "content",
+      "weight": 1
+    }
+  }
+}

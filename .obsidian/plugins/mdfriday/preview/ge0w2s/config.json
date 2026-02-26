@@ -1,0 +1,34 @@
+{
+  "baseURL": "/s/b1623f077c/v6uraq",
+  "title": "notebook-navigator",
+  "contentDir": "content",
+  "publishDir": "public",
+  "defaultContentLanguage": "en",
+  "taxonomies": {
+    "tag": "tags",
+    "category": "categories"
+  },
+  "module": {
+    "imports": [
+      {
+        "path": "https://sunwei.xyz/mdf/company_theme_east.zip?version=1.0"
+      }
+    ]
+  },
+  "markdown": {
+    "useInternalRenderer": true
+  },
+  "params": {
+    "branding": false
+  },
+  "languages": {
+    "zh": {
+      "contentDir": "content",
+      "weight": 1
+    },
+    "en": {
+      "contentDir": "content.en",
+      "weight": 2
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{{ $text := .Get "text" }}
+{{ $url := .Get "url" }}
+{{ $iconName := .Get "icon" }}
+{{ $target := .Get "target" | default "_blank" }}
+
+<a href="{{ $url }}" target="{{ $target }}" class="creator-link" rel="noopener">
+    {{ if $iconName }}
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        {{ partial "icons.html" $iconName }}
+    </svg>
+    {{ end }}
+    <span>{{ $text }}</span>
+</a>

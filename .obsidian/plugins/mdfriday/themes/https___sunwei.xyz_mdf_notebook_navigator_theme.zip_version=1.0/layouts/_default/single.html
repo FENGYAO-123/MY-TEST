@@ -1,0 +1,512 @@
+{{ define "main" }}
+<div class="docs-container">
+    <div class="container">
+        <div class="docs-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="docs-sidebar">
+                <div class="docs-toc">
+                    <div class="toc-header">
+                        <button class="toc-toggle" aria-label="Toggle table of contents">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                            <span>{{ i18n "toc_title" }}</span>
+                        </button>
+                    </div>
+
+                    <div class="toc-content">
+                        <div class="toc-section active">
+                            <div class="toc-links">
+                                {{ .TableOfContents }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="docs-main">
+                <header class="docs-header">
+                    <div class="docs-breadcrumb">
+                        <a href="{{ "" | relLangURL }}">{{ i18n "nav_home" }}</a>
+                        <span>/</span>
+                        <span>{{ .Title }}</span>
+                    </div>
+                </header>
+
+                <div class="docs-content">
+                    {{ .Content }}
+                </div>
+
+            </main>
+        </div>
+    </div>
+</div>
+
+<!-- Add JavaScript for TOC functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tocToggle = document.querySelector('.toc-toggle');
+        const tocContent = document.querySelector('.toc-content');
+        const tocLinks = document.querySelectorAll('.toc-links a');
+
+        // Toggle TOC on mobile
+        if (tocToggle) {
+            tocToggle.addEventListener('click', function() {
+                tocContent.classList.toggle('active');
+            });
+        }
+
+        // Highlight active section based on scroll position
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            let currentSection = null;
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    currentSection = section;
+                }
+            });
+
+            tocLinks.forEach(link => link.classList.remove('active'));
+
+            if (currentSection) {
+                const id = currentSection.id;
+                const activeLink = document.querySelector(`.toc-links a[href="#${id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        }
+
+        // Smooth scroll for TOC links
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Update active section on scroll
+        window.addEventListener('scroll', highlightCurrentSection);
+        highlightCurrentSection(); // Initial call
+    });
+</script>
+
+<style>
+    /* Dark theme (default) */
+    [data-theme="dark"] .docs-container,
+    .docs-container {
+        min-height: 100vh;
+        padding-top: 80px;
+        background-color: #0a0a0b;
+    }
+
+    [data-theme="dark"] .docs-toc,
+    .docs-toc {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 0;
+    }
+
+    [data-theme="dark"] .toc-header,
+    .toc-header {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .toc-toggle,
+    .toc-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: none;
+        border: none;
+        color: #fafafa;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    [data-theme="dark"] .toc-section.active .toc-title,
+    .toc-section.active .toc-title {
+        color: #8b5cf6;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+    }
+
+    [data-theme="dark"] .toc-link,
+    .toc-link {
+        color: #a1a1aa;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+    }
+
+    [data-theme="dark"] .toc-link:hover,
+    .toc-link:hover {
+        color: #fafafa;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    [data-theme="dark"] .toc-link.active,
+    .toc-link.active {
+        color: #8b5cf6;
+        background: rgba(139, 92, 246, 0.1);
+    }
+
+    [data-theme="dark"] .toc-subsection,
+    .toc-subsection {
+        margin-left: 1rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0.75rem;
+    }
+
+    [data-theme="dark"] .docs-breadcrumb,
+    .docs-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #a1a1aa;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+
+    [data-theme="dark"] .docs-breadcrumb a,
+    .docs-breadcrumb a {
+        color: #8b5cf6;
+        text-decoration: none;
+    }
+
+    [data-theme="dark"] .docs-title,
+    .docs-title {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #fafafa;
+        margin: 0;
+    }
+
+    [data-theme="dark"] .docs-content,
+    .docs-content {
+        line-height: 1.7;
+        color: #d4d4d8;
+    }
+
+    [data-theme="dark"] .docs-content h1,
+    [data-theme="dark"] .docs-content h2,
+    [data-theme="dark"] .docs-content h3,
+    [data-theme="dark"] .docs-content h4,
+    [data-theme="dark"] .docs-content h5,
+    [data-theme="dark"] .docs-content h6,
+    .docs-content h1,
+    .docs-content h2,
+    .docs-content h3,
+    .docs-content h4,
+    .docs-content h5,
+    .docs-content h6 {
+        color: #fafafa;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    [data-theme="dark"] .docs-footer,
+    .docs-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Light theme */
+    [data-theme="light"] .docs-container {
+        background-color: #ffffff;
+    }
+
+    [data-theme="light"] .docs-toc {
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        padding: 0;
+    }
+
+    [data-theme="light"] .toc-header {
+        padding: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .toc-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: none;
+        border: none;
+        color: #1a1a1a;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    [data-theme="light"] .toc-section.active .toc-title {
+        color: #8b5cf6;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+    }
+
+    [data-theme="light"] .toc-link {
+        color: #6b7280;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+    }
+
+    [data-theme="light"] .toc-link:hover {
+        color: #1a1a1a;
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="light"] .toc-link.active {
+        color: #8b5cf6;
+        background: rgba(139, 92, 246, 0.1);
+    }
+
+    [data-theme="light"] .toc-subsection {
+        margin-left: 1rem;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        padding-left: 0.75rem;
+    }
+
+    [data-theme="light"] .docs-breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #6b7280;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+
+    [data-theme="light"] .docs-breadcrumb a {
+        color: #8b5cf6;
+        text-decoration: none;
+    }
+
+    [data-theme="light"] .docs-title {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 0;
+    }
+
+    [data-theme="light"] .docs-content {
+        line-height: 1.7;
+        color: #374151;
+    }
+
+    [data-theme="light"] .docs-content h1,
+    [data-theme="light"] .docs-content h2,
+    [data-theme="light"] .docs-content h3,
+    [data-theme="light"] .docs-content h4,
+    [data-theme="light"] .docs-content h5,
+    [data-theme="light"] .docs-content h6 {
+        color: #1a1a1a;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    [data-theme="light"] .docs-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Common styles */
+    .docs-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .docs-sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+
+    .toc-content {
+        padding: 1rem;
+    }
+
+    .toc-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .docs-main {
+        min-width: 0;
+        padding: 20px 48px 96px;
+    }
+
+    .docs-header {
+        margin-bottom: 2rem;
+    }
+
+    .docs-content h1 { font-size: 2rem; }
+    .docs-content h2 { font-size: 1.5rem; }
+    .docs-content h3 { font-size: 1.25rem; }
+
+    .docs-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+        .docs-layout {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .docs-sidebar {
+            position: static;
+            max-height: none;
+        }
+
+        .toc-content {
+            display: none;
+        }
+
+        .toc-content.active {
+            display: block;
+        }
+
+        .docs-title {
+            font-size: 2rem !important;
+        }
+    }
+
+    /* Apply TOC styles to TableOfContents generated HTML */
+    .toc-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .toc-links li {
+        margin: 0;
+    }
+
+    /* First level links */
+    .toc-links > ul > li > a {
+        color: #a1a1aa;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+        display: block;
+    }
+
+    .toc-links > ul > li > a:hover {
+        color: #fafafa;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .toc-links > ul > li > a.active {
+        color: #8b5cf6;
+        background: rgba(139, 92, 246, 0.1);
+    }
+
+    /* Nested levels (subsections) */
+    .toc-links ul ul {
+        margin-left: 1rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0.75rem;
+    }
+
+    .toc-links ul ul a {
+        color: #a1a1aa;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        transition: all 0.2s ease;
+        display: block;
+    }
+
+    .toc-links ul ul a:hover {
+        color: #fafafa;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .toc-links ul ul a.active {
+        color: #8b5cf6;
+        background: rgba(139, 92, 246, 0.1);
+    }
+
+    /* Light theme styles for TableOfContents */
+    [data-theme="light"] .toc-links > ul > li > a {
+        color: #6b7280;
+    }
+
+    [data-theme="light"] .toc-links > ul > li > a:hover {
+        color: #1a1a1a;
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="light"] .toc-links > ul > li > a.active {
+        color: #8b5cf6;
+        background: rgba(139, 92, 246, 0.1);
+    }
+
+    [data-theme="light"] .toc-links ul ul {
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .toc-links ul ul a {
+        color: #6b7280;
+    }
+
+    [data-theme="light"] .toc-links ul ul a:hover {
+        color: #1a1a1a;
+        background: rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="light"] .toc-links ul ul a.active {
+        color: #8b5cf6;
+        background: rgba(139, 92, 246, 0.1);
+    }
+</style>
+{{ end }}

@@ -1,0 +1,33 @@
+{
+{{- $pages := where .Site.Pages "Kind" "in" (slice "page" "section") -}}
+{{- $pages = where $pages "Content" "!=" "" -}}
+
+{{/* Extract baseURL path to calculate slugs */}}
+{{- $baseURL := .Site.BaseURL | default "/" -}}
+{{- $baseURLPath := "" -}}
+{{- if ne $baseURL "/" -}}
+  {{/* Extract path part from baseURL: "/public/" -> "public" */}}
+  {{- $baseURLPath = $baseURL | strings.TrimPrefix "/" | strings.TrimSuffix "/" -}}
+{{- end -}}
+
+{{- range $index, $page := $pages -}}
+{{- if gt $index 0}},{{end -}}
+
+{{/* Calculate slug (same logic as scripts-body.html) */}}
+{{- $relPermalink := $page.RelPermalink | strings.TrimPrefix "/" -}}
+{{- $slug := $relPermalink -}}
+{{- if $baseURLPath -}}
+  {{- $slug = $relPermalink | strings.TrimPrefix $baseURLPath | strings.TrimPrefix "/" -}}
+{{- end -}}
+{{- $slug = $slug | strings.TrimSuffix ".html" | strings.TrimSuffix "/index" -}}
+{{- if eq $slug "" -}}{{- $slug = "index" -}}{{- end -}}
+
+  {{ $slug | jsonify }}: {
+    "slug": {{ $slug | jsonify }},
+    "url": {{ $page.RelPermalink | jsonify }},
+    "title": {{ $page.Title | jsonify }},
+    "content": {{ $page.Plain | jsonify }},
+    "tags": {{ (default (slice) $page.Params.tags) | jsonify }}
+  }
+{{- end -}}
+}

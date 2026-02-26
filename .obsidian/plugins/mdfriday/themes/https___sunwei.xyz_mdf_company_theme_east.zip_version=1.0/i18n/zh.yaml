@@ -1,0 +1,54 @@
+# Chinese translations
+- id: "blog"
+  translation: "博客"
+
+- id: "all_posts"
+  translation: "所有文章"
+
+- id: "all_rights_reserved"
+  translation: "版权所有"
+
+- id: "copied"
+  translation: "已复制！"
+
+- id: "copied_url_title"
+  translation: "已复制链接和标题。"
+
+- id: "first"
+  translation: "首页"
+
+- id: "prev"
+  translation: "上一页"
+
+- id: "next"
+  translation: "下一页"
+
+- id: "last"
+  translation: "末页"
+
+- id: "post"
+  translation: "发布"
+
+- id: "facebook"
+  translation: "Facebook"
+
+- id: "hatena"
+  translation: "Hatena"
+
+- id: "pocket"
+  translation: "Pocket"
+
+- id: "line"
+  translation: "LINE"
+
+- id: "copy"
+  translation: "复制"
+
+- id: "copy_to_clipboard"
+  translation: "复制到剪贴板"
+
+- id: "page_navigation"
+  translation: "页面导航"
+
+- id: "share"
+  translation: "分享"

@@ -1,0 +1,30 @@
+{
+  "baseURL": "/s/b1623f077c/x3t0mv",
+  "title": "Obsidian仓库和GitHub同步",
+  "contentDir": "content",
+  "publishDir": "public",
+  "defaultContentLanguage": "en",
+  "taxonomies": {
+    "tag": "tags",
+    "category": "categories"
+  },
+  "module": {
+    "imports": [
+      {
+        "path": "https://gohugo.net/quartz-theme.zip?version=1.0"
+      }
+    ]
+  },
+  "markdown": {
+    "useInternalRenderer": true
+  },
+  "params": {
+    "branding": false
+  },
+  "languages": {
+    "zh": {
+      "contentDir": "content",
+      "weight": 1
+    }
+  }
+}

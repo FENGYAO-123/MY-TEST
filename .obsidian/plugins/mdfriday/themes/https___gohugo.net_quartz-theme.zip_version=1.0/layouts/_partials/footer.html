@@ -1,0 +1,22 @@
+<footer>
+    <p>
+        {{ i18n "footer.built_with" | default "Built with" }} 
+        <a href="https://github.com/mdfriday">MDFriday</a>
+        <br/> © {{ now.Format "2006" }} All Rights Reserved.
+    </p>
+    {{- with .Site.Params.footer -}}
+    {{- with .links -}}
+    <ul class="footer-links">
+        {{- range $name, $url := . -}}
+        <li><a href="{{ $url }}">{{ $name }}</a></li>
+        {{- end -}}
+    </ul>
+    {{- end -}}
+    {{- end -}}
+
+    {{ partial "google_analytics" . }}
+    {{ if .Site.Params.branding }}
+    {{ partial "mdf-brand" . }}
+    {{ end }}
+</footer>
+

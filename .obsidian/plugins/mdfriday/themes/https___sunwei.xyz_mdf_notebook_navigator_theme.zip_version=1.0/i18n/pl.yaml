@@ -1,0 +1,90 @@
+# Navigation
+- id: nav_home
+  translation: Strona główna
+
+- id: nav_documentation
+  translation: Dokumentacja
+
+- id: nav_support
+  translation: Wsparcie
+
+# Spis treści
+- id: toc_title
+  translation: SPIS TREŚCI
+
+# Wydania
+- id: view_full_changelog
+  translation: Zobacz pełny dziennik zmian
+
+# Stopka
+- id: footer_theme_credit
+  translation: 'Motyw <a href="https://theme-ob-plugin.mdfriday.com">Obsidian Plugin</a> zaadaptowany z <a href="https://notebooknavigator.com/">Notebook Navigator</a>'
+
+- id: nav_star_github
+  translation: Oznacz gwiazdką na GitHub
+
+- id: nav_toggle_theme
+  translation: Przełącz motyw
+
+- id: nav_toggle_navigation
+  translation: Przełącz nawigację
+
+- id: nav_change_language
+  translation: Zmień język
+
+# Elementy stopki są teraz konfigurowalne w frontmatter
+# Zachowuj tylko niezbędne elementy UI dla i18n
+
+# Installation
+- id: install_from_obsidian
+  translation: Zainstaluj z Obsidian
+
+- id: install_step_1
+  translation: Otwórz Ustawienia → Wtyczki społeczności
+
+- id: install_step_2
+  translation: Wyszukaj
+
+- id: install_step_3
+  translation: Kliknij Zainstaluj, następnie Włącz
+
+# Buttons and Actions
+- id: btn_install_obsidian
+  translation: Zainstaluj w Obsidian
+
+- id: btn_view_documentation
+  translation: Zobacz dokumentację
+
+- id: btn_get_support
+  translation: Uzyskaj wsparcie
+
+- id: btn_buy_me_coffee
+  translation: Postaw mi kawę
+
+- id: btn_sponsor_github
+  translation: Sponsoruj na GitHub
+
+- id: btn_download_manual
+  translation: Pobierz instalację ręczną
+
+- id: btn_view_releases
+  translation: Zobacz wszystkie wydania
+
+# Stats and Labels
+- id: label_free
+  translation: Darmowe
+
+- id: label_open_source
+  translation: Open Source
+
+- id: label_downloads
+  translation: Pobrania
+
+- id: label_github_stars
+  translation: Gwiazdki GitHub
+
+- id: label_latest_updates
+  translation: Najnowsze aktualizacje
+
+- id: label_latest_release
+  translation: Najnowsze wydanie

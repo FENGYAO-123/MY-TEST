@@ -1,0 +1,12 @@
+{{ define "main" }}
+<article class="popover-hint">
+    {{- if .Content -}}
+    <div class="article-content">
+        {{ .Content }}
+    </div>
+    {{- end -}}
+    
+    {{- partial "components/page-list.html" . -}}
+</article>
+{{ end }}
+

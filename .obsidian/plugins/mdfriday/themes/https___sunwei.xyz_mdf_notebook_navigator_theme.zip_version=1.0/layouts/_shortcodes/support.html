@@ -1,0 +1,17 @@
+{{ $title := .Get "title" }}
+{{ $description := .Get "description" }}
+
+<!-- Support Section -->
+<section id="support" class="support">
+    <div class="container">
+        <div class="support-content">
+            <div class="support-card">
+                <h2>{{ $title }}</h2>
+                <p>{{ $description }}</p>
+                <div class="support-actions">
+                    {{ .Inner | safeHTML }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

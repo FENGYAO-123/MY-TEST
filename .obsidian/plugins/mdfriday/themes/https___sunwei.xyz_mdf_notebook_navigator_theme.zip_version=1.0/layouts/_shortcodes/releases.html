@@ -1,0 +1,148 @@
+{{ $label := .Get "label" }}
+{{ $title := .Get "title" }}
+{{ $subtitle := .Get "subtitle" }}
+{{ $githubRepo := .Get "github" | default "johansan/notebook-navigator" }}
+
+<!-- Releases Section -->
+<section id="releases" class="releases" data-section="releases">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">{{ $label }}</span>
+            <h2 class="section-title">{{ $title }}</h2>
+            <p class="section-subtitle">{{ $subtitle }}</p>
+        </div>
+        <div class="releases-timeline">
+            <div class="timeline-line"></div>
+            <div class="release-card visible">
+                <div class="release-content">
+                    {{ .Inner }}
+                </div>
+            </div>
+        </div>
+        <div class="releases-footer">
+            <a href="https://github.com/{{ $githubRepo }}/releases" class="btn-view-all" target="_blank" rel="noopener">
+                <span>{{ i18n "view_full_changelog" }}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 7h10v10"></path>
+                    <path d="M7 17L17 7"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for dynamic release loading (based on source implementation) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadLatestRelease();
+});
+
+let cachedRelease = null;
+
+async function loadLatestRelease() {
+    try {
+        if (!cachedRelease) {
+            const response = await fetch('https://api.github.com/repos/{{ $githubRepo }}/releases?per_page=1');
+            const releases = await response.json();
+            
+            if (!releases || releases.length === 0) {
+                return; // Keep fallback content
+            }
+            
+            cachedRelease = releases[0];
+        }
+        
+        const timeline = document.querySelector('#releases .releases-timeline');
+        if (!timeline) return;
+        
+        // Clear existing content
+        timeline.innerHTML = '';
+        
+        // Create release card based on source implementation
+        const releaseCard = createReleaseCard(cachedRelease);
+        timeline.appendChild(releaseCard);
+        
+    } catch (error) {
+        console.log('Failed to load latest release:', error);
+        // Keep fallback content - do nothing
+    }
+}
+
+function createReleaseCard(release) {
+    const card = document.createElement('div');
+    card.className = 'release-card';
+    
+    const publishedDate = new Date(release.published_at);
+    const daysAgo = Math.floor((Date.now() - publishedDate) / (1000 * 60 * 60 * 24));
+    const isNew = daysAgo < 7;
+    
+    let dateText;
+    if (daysAgo === 0) {
+        dateText = 'Today';
+    } else if (daysAgo === 1) {
+        dateText = 'Yesterday';
+    } else if (daysAgo < 7) {
+        dateText = daysAgo + ' days ago';
+    } else if (daysAgo < 30) {
+        const weeksAgo = Math.floor(daysAgo / 7);
+        dateText = weeksAgo + ' week' + (weeksAgo > 1 ? 's' : '') + ' ago';
+    } else if (daysAgo < 365) {
+        const monthsAgo = Math.floor(daysAgo / 30);
+        dateText = monthsAgo + ' month' + (monthsAgo > 1 ? 's' : '') + ' ago';
+    } else {
+        const yearsAgo = Math.floor(daysAgo / 365);
+        dateText = yearsAgo + ' year' + (yearsAgo > 1 ? 's' : '') + ' ago';
+    }
+    
+    let body = release.body || '';
+    
+    // Remove version number from start of body (like source does)
+    const versionRegex = new RegExp('^' + release.tag_name.replace('v', '') + '\\s*\\n+', 'i');
+    body = body.replace(versionRegex, '');
+    
+    const hasBreaking = body.toLowerCase().includes('breaking');
+    
+    // Convert markdown to HTML (simplified version from source)
+    let bodyHtml = body
+        .replace(/^### (.+)$/gm, '<h4>$1</h4>')
+        .replace(/^## (.+)$/gm, '<h3>$1</h3>')
+        .replace(/^# (.+)$/gm, '<h2>$1</h2>')
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>')
+        .replace(/^\* (.+)$/gm, '<li>$1</li>')
+        .replace(/^- (.+)$/gm, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>\s*)+/g, match => '<ul>' + match + '</ul>')
+        .replace(/\n\n+/g, '</p><p>')
+        .replace(/\n/g, ' ');
+    
+    if (!bodyHtml.startsWith('<')) {
+        bodyHtml = '<p>' + bodyHtml + '</p>';
+    }
+    
+    card.innerHTML = `
+        <div class="release-content">
+            <div class="release-header">
+                ${isNew ? '<span class="badge-new">NEW!</span>' : ''}
+                ${hasBreaking ? '<span class="badge-breaking">BREAKING CHANGES</span>' : ''}
+                <span class="release-version">${release.tag_name}</span>
+                <span class="release-date">${dateText}</span>
+            </div>
+            <div class="release-notes-content">
+                ${bodyHtml}
+            </div>
+            <div class="release-actions">
+                <a href="${release.html_url}" class="btn-release-notes" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 7h10v10" />
+                        <path d="M7 17L17 7" />
+                    </svg>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+    `;
+    
+    return card;
+}
+</script>

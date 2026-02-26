@@ -1,0 +1,115 @@
+{{ define "main" }}
+<div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-5xl font-bold mb-3">{{.Title}}</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
+                {{ time.Format "2 Jan 2006" .Date }} </h4>
+            {{ if .Params.author }}
+            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>{{.Params.author}}
+            </h4>
+            {{ end }}
+            {{ with .Params.categories }}
+            <div id="categories" class="flex flex-row items-center">
+                <span class="icon-folder text-2xl mr-1"></span>
+                {{ range . }}
+                <span
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href='{{ "categories" | absURL}}/{{ . | urlize }}'>{{ . }}</a></span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </section>
+        {{ if .Params.image }}
+        <img class="my-4" src="{{ .Params.image | relURL }}">
+        {{ end }}
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1">{{.Content}}</div>
+
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+            <a href="#" class="share-button x" data-share="twitter" target="_blank" title="{{ i18n "post" }}">
+                <div class="text-white text-center">
+                    <span class="icon-x text-lg mr-2"></span>X
+                </div>
+            </a>
+            <a href="#" class="share-button facebook" data-share="facebook" target="_blank" title="{{ i18n "facebook" }}">
+                <div class="text-white text-center">
+                    <span class="icon-facebook text-lg mr-2"></span>{{ i18n "facebook" }}
+                </div>
+            </a>
+            <a href="#" class="share-button hatena" data-share="hatena" target="_blank" title="{{ i18n "hatena" }}">
+                <div class="text-white text-center">
+                    <span class="icon-hatenabookmark text-lg mr-2"></span>{{ i18n "hatena" }}
+                </div>
+            </a>
+            <a href="#" class="share-button pocket" data-share="pocket" target="_blank" title="{{ i18n "pocket" }}">
+                <div class="text-white text-center">
+                    <span class="icon-get-pocket text-lg mr-2"></span>{{ i18n "pocket" }}
+                </div>
+            </a>
+            <a href="#" class="share-button line" data-share="line" target="_blank">
+                <div class="text-white text-center">
+                    <span class="icon-line text-lg mr-2"></span>{{ i18n "line" }}
+                </div>
+            </a>
+            <a href="javascript:OnClickURL();" class="share-button url" title="{{ i18n "copy_to_clipboard" }}" id="url">
+                <div class="text-white text-center">
+                    <span class="icon-link text-lg mr-2"></span>{{ i18n "copy" }}
+                </div>
+            </a>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUrl = window.location.href;
+            const pageTitle = encodeURIComponent('{{ .Title }}');
+            
+            // 为每个分享按钮设置正确的 URL
+            document.querySelectorAll('[data-share]').forEach(function(link) {
+                const shareType = link.getAttribute('data-share');
+                let shareUrl = '';
+                
+                switch(shareType) {
+                    case 'twitter':
+                        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=${pageTitle}`;
+                        break;
+                    case 'facebook':
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}&t=${pageTitle}`;
+                        break;
+                    case 'hatena':
+                        shareUrl = `https://b.hatena.ne.jp/add?mode=confirm&url=${encodeURIComponent(currentUrl)}&title=${pageTitle}`;
+                        break;
+                    case 'pocket':
+                        shareUrl = `https://getpocket.com/edit?url=${encodeURIComponent(currentUrl)}&title=${pageTitle}`;
+                        break;
+                    case 'line':
+                        shareUrl = `https://timeline.line.me/social-plugin/share?url=${encodeURIComponent(currentUrl)}`;
+                        break;
+                }
+                
+                if (shareUrl) {
+                    link.href = shareUrl;
+                }
+            });
+            
+            // 更新复制按钮的数据
+            const copyButton = document.getElementById('url');
+            if (copyButton) {
+                copyButton.setAttribute('data-clipboard-text', `{{ .Title }} ${currentUrl}`);
+            }
+        });
+        </script>
+
+        {{ template "comments" . }}
+    </div>
+</div>
+{{ end }}
+
+{{ define "comments" }}
+{{ if .Params.comments }}
+<hr class="py-4">
+<div class="mb-3">
+    {{ partial "disqus" . }}
+</div>
+<hr class="py-4">
+{{ end }}
+{{ end }}

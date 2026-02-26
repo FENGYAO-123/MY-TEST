@@ -1,0 +1,90 @@
+# Navigation
+- id: nav_home
+  translation: Startseite
+
+- id: nav_documentation
+  translation: Dokumentation
+
+- id: nav_support
+  translation: Support
+
+# Inhaltsverzeichnis
+- id: toc_title
+  translation: INHALTSVERZEICHNIS
+
+# Veröffentlichungen
+- id: view_full_changelog
+  translation: Vollständiges Changelog anzeigen
+
+# Fußzeile
+- id: footer_theme_credit
+  translation: 'Theme <a href="https://theme-ob-plugin.mdfriday.com">Obsidian Plugin</a> adaptiert von <a href="https://notebooknavigator.com/">Notebook Navigator</a>'
+
+- id: nav_star_github
+  translation: Auf GitHub bewerten
+
+- id: nav_toggle_theme
+  translation: Theme wechseln
+
+- id: nav_toggle_navigation
+  translation: Navigation umschalten
+
+- id: nav_change_language
+  translation: Sprache ändern
+
+# Footer-Elemente sind jetzt im Frontmatter konfigurierbar
+# Nur wesentliche UI-Elemente für i18n beibehalten
+
+# Installation
+- id: install_from_obsidian
+  translation: Von Obsidian installieren
+
+- id: install_step_1
+  translation: Öffne Einstellungen → Community-Plugins
+
+- id: install_step_2
+  translation: Suche nach
+
+- id: install_step_3
+  translation: Klicke auf Installieren, dann Aktivieren
+
+# Buttons and Actions
+- id: btn_install_obsidian
+  translation: In Obsidian installieren
+
+- id: btn_view_documentation
+  translation: Dokumentation anzeigen
+
+- id: btn_get_support
+  translation: Support erhalten
+
+- id: btn_buy_me_coffee
+  translation: Kaufe mir einen Kaffee
+
+- id: btn_sponsor_github
+  translation: Auf GitHub sponsern
+
+- id: btn_download_manual
+  translation: Manuelle Installation herunterladen
+
+- id: btn_view_releases
+  translation: Alle Versionen anzeigen
+
+# Stats and Labels
+- id: label_free
+  translation: Kostenlos
+
+- id: label_open_source
+  translation: Open Source
+
+- id: label_downloads
+  translation: Downloads
+
+- id: label_github_stars
+  translation: GitHub Sterne
+
+- id: label_latest_updates
+  translation: Neueste Updates
+
+- id: label_latest_release
+  translation: Neueste Version

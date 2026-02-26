@@ -1,0 +1,91 @@
+<footer class="bg-tlgray-100">
+  {{ if not .IsHome }}
+  <script src='{{ "js/clipboard.min.js" | relURL }}'></script>
+  <script src='{{ "js/highlight.min.js" | relURL }}'></script>
+  <script src='{{ "js/highlightjs-line-numbers.min.js" | relURL }}'></script>
+  <script src='{{ "js/sweetalert2.min.js" | relURL }}'></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+    new ClipboardJS('.url');
+
+    function OnClickURL() {
+      Swal.fire({
+        icon: 'success',
+        title: '{{ i18n "copied" }}',
+        text: '{{ i18n "copied_url_title" }}'
+      })
+    }
+  </script>
+  {{ end }}
+  <script>
+    function toggleNav() {
+      var hamburger = document.getElementById("hamburgerbtn");
+      var overlay = document.getElementById("overlay");
+      var body = document.body;
+
+      hamburger.addEventListener("click", function () {
+        overlay.classList.toggle("open");
+        hamburger.classList.toggle("is-open");
+        body.classList.toggle("scroll-lock");
+      });
+    }
+    toggleNav();
+
+    document.querySelector('.scroll-top').addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+  </script>
+  {{ if .Site.Params.googleFonts }}
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet" />
+  {{ else }}
+  <link href='{{ "css/webfonts.min.css" | relURL }}' rel="stylesheet" />
+  {{ end }}
+  <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
+    <div class="items-center text-xl text-grey-900 mr-6">
+      {{- /* 优先显示 organization 名称，其次是 site 名称 */ -}}
+      {{- if .Site.Home.Params.organization.name -}}
+        {{ .Site.Home.Params.organization.name }}
+      {{- else if .Site.Params.site.name -}}
+        {{ .Site.Params.site.name }}
+      {{- else -}}
+        {{ .Site.Title }}
+      {{- end -}}
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+      <div class="text-lg lg:flex-grow">
+      </div>
+      <div class="flex flex-row items-center text-lg">
+        {{- /* 显示 author 社交媒体链接 */ -}}
+        {{- if .Site.Home.Params.author.social -}}
+          {{- range $platform, $url := .Site.Home.Params.author.social -}}
+            {{- if $url -}}
+            <a href="{{ $url }}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-6" title="{{ $platform | title }}" target="_blank" rel="noopener">
+              <i class="{{ partial "social_icon" (dict "PlatformId" $platform) }} text-xl"></i>
+            </a>
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        
+        {{- /* 显示 footer menu */ -}}
+        {{ range .Site.Menus.footer }}
+        <a href="{{ .URL }}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+          {{ if not .Pre }}
+          {{ .Name }}
+          {{ else }}
+          {{ .Pre }}
+          {{ end }}
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+    &copy; {{ now.Format "2006" }} {{ i18n "all_rights_reserved" }}.
+  </div>
+
+  {{ partial "google_analytics" . }}
+  {{ if .Site.Params.branding }}
+  {{ partial "mdf-brand" . }}
+  {{ end }}
+</footer>

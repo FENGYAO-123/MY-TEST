@@ -1,0 +1,23 @@
+{{ $text := .Get "text" }}
+{{ $url := .Get "url" }}
+{{ $class := .Get "class" | default "btn-primary" }}
+{{ $iconName := .Get "icon" }}
+{{ $image := .Get "image" }}
+{{ $target := .Get "target" | default "_blank" }}
+
+{{ if $image }}
+<!-- Image-based button (e.g., Buy Me a Coffee) -->
+<a href="{{ $url }}" target="{{ $target }}" rel="noopener" style="display: inline-block;">
+    <img src="{{ $image | relURL }}" alt="{{ $text }}" style="height: 48px; width: auto;">
+</a>
+{{ else }}
+<!-- Regular button with icon -->
+<a href="{{ $url }}" target="{{ $target }}" rel="noopener" class="btn {{ $class }}">
+    {{ if $iconName }}
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        {{ partial "icons.html" $iconName }}
+    </svg>
+    {{ end }}
+    <span>{{ $text }}</span>
+</a>
+{{ end }}

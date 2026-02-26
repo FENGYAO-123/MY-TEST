@@ -1,0 +1,27 @@
+{{ $label := .Get "label" }}
+{{ $title := .Get "title" }}
+{{ $subtitle := .Get "subtitle" }}
+{{ $image := .Get "image" | default "hero-preview.png" }}
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">{{ $label }}</span>
+            <h2 class="section-title">{{ $title }}</h2>
+            <p class="section-subtitle">{{ $subtitle }}</p>
+        </div>
+
+        <!-- Preview Image Section -->
+        <div class="preview-visual">
+            <img src="{{ $image | relURL }}" alt="{{ .Page.Title }} Interface" class="hero-image" loading="lazy">
+        </div>
+
+        <div class="feature-grid" id="feature-grid">
+            <!-- Features will be added by feature shortcodes -->
+        </div>
+    </div>
+</section>
+
+<!-- Process inner content -->
+{{ .Inner | safeHTML }}

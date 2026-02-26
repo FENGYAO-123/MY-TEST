@@ -1,0 +1,20 @@
+name = "Notebook Navigator"
+license = "MIT"
+licenselink = "https://github.com/mdfriday/themes/blob/main/LICENSE"
+description = "Modern project site theme for Obsidian plugin, inspired by Obsidian Notebook Navigator plugin"
+homepage = "https://theme-ob-plugin.mdfriday.com/"
+tags = ["modern", "dark", "light", "responsive", "clean", "obsidian", "notebook", "explorer"]
+features = ["responsive", "dark-mode", "search", "navigation"]
+
+[author]
+  name = "MDFriday"
+  homepage = "https://github.com/mdfriday"
+
+[original]
+  name = "MDFriday"
+  homepage = "https://mdfriday.com/"
+  repo = "https://github.com/mdfriday/themes"
+
+[module]
+  [[module.imports]]
+    path = "https://sunwei.xyz/mdf/base.zip?version=latest"

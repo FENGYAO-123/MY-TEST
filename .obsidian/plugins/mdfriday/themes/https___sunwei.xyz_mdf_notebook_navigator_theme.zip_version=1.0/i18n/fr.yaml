@@ -1,0 +1,90 @@
+# Navigation
+- id: nav_home
+  translation: Accueil
+
+- id: nav_documentation
+  translation: Documentation
+
+- id: nav_support
+  translation: Support
+
+# Table des matières
+- id: toc_title
+  translation: TABLE DES MATIÈRES
+
+# Versions
+- id: view_full_changelog
+  translation: Voir le journal complet des modifications
+
+# Pied de page
+- id: footer_theme_credit
+  translation: 'Thème <a href="https://theme-ob-plugin.mdfriday.com">Obsidian Plugin</a> adapté de <a href="https://notebooknavigator.com/">Notebook Navigator</a>'
+
+- id: nav_star_github
+  translation: Étoiler sur GitHub
+
+- id: nav_toggle_theme
+  translation: Basculer le thème
+
+- id: nav_toggle_navigation
+  translation: Basculer la navigation
+
+- id: nav_change_language
+  translation: Changer de langue
+
+# Les éléments de pied de page sont maintenant configurables dans frontmatter
+# Ne conserver que les éléments UI essentiels pour i18n
+
+# Installation
+- id: install_from_obsidian
+  translation: Installer depuis Obsidian
+
+- id: install_step_1
+  translation: Ouvrir Paramètres → Plugins communautaires
+
+- id: install_step_2
+  translation: Rechercher
+
+- id: install_step_3
+  translation: Cliquer sur Installer, puis Activer
+
+# Buttons and Actions
+- id: btn_install_obsidian
+  translation: Installer dans Obsidian
+
+- id: btn_view_documentation
+  translation: Voir la documentation
+
+- id: btn_get_support
+  translation: Obtenir du support
+
+- id: btn_buy_me_coffee
+  translation: M'offrir un café
+
+- id: btn_sponsor_github
+  translation: Sponsoriser sur GitHub
+
+- id: btn_download_manual
+  translation: Télécharger l'installation manuelle
+
+- id: btn_view_releases
+  translation: Voir toutes les versions
+
+# Stats and Labels
+- id: label_free
+  translation: Gratuit
+
+- id: label_open_source
+  translation: Open Source
+
+- id: label_downloads
+  translation: Téléchargements
+
+- id: label_github_stars
+  translation: Étoiles GitHub
+
+- id: label_latest_updates
+  translation: Dernières mises à jour
+
+- id: label_latest_release
+  translation: Dernière version
