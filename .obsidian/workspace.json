@@ -11,14 +11,10 @@
             "id": "dde3a18435b4d0ff",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "xiaoba199303/Obsidian仓库和GitHub同步.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Obsidian仓库和GitHub同步"
+              "title": "新标签页"
             }
           }
         ]
@@ -196,33 +192,33 @@
       "notebook-navigator:笔记本导航器": false
     }
   },
-  "active": "a77339f7316bd7b1",
+  "active": "dde3a18435b4d0ff",
   "lastOpenFiles": [
+    "xiaoba199303/Obsidian仓库和GitHub同步.md",
+    "thanks.html",
+    "sitemap.xml",
+    "site.webmanifest",
+    "select.js",
+    "mermaid.min.js",
+    "index.html",
+    "favicon-32x32.png",
+    "favicon-16x16.png",
+    "favicon.svg",
+    "favicon.ico",
+    "decrypt.js",
+    "contact.html",
+    "apple-touch-icon.png",
+    "android-chrome-512x512.png",
+    "android-chrome-192x192.png",
+    "about-favicon.txt",
+    "img/slide/woosir-mens-leather-weekender-bag-with-shoe-compartment-23woosir85424411-dark-brown-422808 (1).jpg",
+    "img/slide/微信图片_20260108111243_1180_11.jpg",
+    "img/slide/slide02.jpg",
+    "img/slide/slide01.jpg",
     "MDFriday/NUPUGOO/content/contact.md",
     "xiaoba199303/牛皮.md",
     "xiaoba199303/未命名.md",
     "xiaoba199303/小八子.md",
-    "xiaoba199303/Obsidian仓库和GitHub同步.md",
-    "xiaoba199303",
-    "nupugoo/thanks.html",
-    "nupugoo/tags/mdfriday/index.html",
-    "nupugoo/tags/index/index.html",
-    "nupugoo/tags/mdfriday",
-    "nupugoo/tags/index.html",
-    "nupugoo/tags/index",
-    "nupugoo/tags",
-    "nupugoo/sitemap.xml",
-    "nupugoo/site.webmanifest",
-    "nupugoo/img/slide/woosir-mens-leather-weekender-bag-with-shoe-compartment-23woosir85424411-dark-brown-422808 (1).jpg",
-    "nupugoo/img/slide/微信图片_20260108111243_1180_11.jpg",
-    "nupugoo/img/slide/slide01.jpg",
-    "nupugoo/img/slide/slide02.jpg",
-    "nupugoo/img/logo/logo.svg",
-    "nupugoo/img/project.jpeg",
-    "nupugoo/img/default.jpg",
-    "nupugoo/favicon.svg",
-    "nupugoo/favicon-32x32.png",
-    "nupugoo/favicon-16x16.png",
     "MDFriday/NUPUGOO/content/about.md",
     "MDFriday/NUPUGOO/content/posts/005-rich-content.md",
     "MDFriday/NUPUGOO/content/posts/004-math-typesetting.md",
@@ -242,7 +238,6 @@
     "MDFriday/quartz/content/features/Mermaid diagrams.md",
     "MDFriday/quartz/content/features/breadcrumbs.md",
     "MDFriday/quartz/content/features/full-text search.md",
-    "MDFriday/quartz/content/features/callouts.md",
-    "MDFriday/quartz/content/features/graph view.md"
+    "MDFriday/quartz/content/features/callouts.md"
   ]
 }
