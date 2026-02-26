@@ -12,4 +12,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan dapibus 
 更新了
 
 
-![[微信图片_20260108111243_1180_11.jpg]]![[woosir-mens-leather-weekender-bag-with-shoe-compartment-23woosir85424411-dark-brown-422808 (1).jpg]]
+![[xiaoba199303/nupugoo/img/slide/微信图片_20260108111243_1180_11.jpg]]![[xiaoba199303/nupugoo/img/slide/woosir-mens-leather-weekender-bag-with-shoe-compartment-23woosir85424411-dark-brown-422808 (1).jpg]]
